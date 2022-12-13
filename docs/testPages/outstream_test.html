@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>RetailSpot test page</title>
+      <style type="text/css">
+      	.fake-text {
+      		color:gray;
+       		margin:16px;
+					max-width: 600px;
+					margin: auto;
+       	}
+       	.centered {
+       		text-align: center;
+       	}
+					body {
+					font-family: arial;
+				}
+					.setting {
+					margin: 20px;
+				}
+      </style>
+			<script src="//acdn.adnxs.com/cmp/cmp.complete.bundle.js" async></script>
+
+    </head>
+    <body oncontextmenu="return false;">
+        <h1>RetailSpot player test page</h1>
+        <div>
+        	Test config:
+        	<ul>
+        		<li>RSPlayer version: <b><span id="rsp-version"></span></b></li>
+        		
+        	</ul>
+        </div>
+        <div>
+					<div class="setting">
+						<b>Environment:</b>
+						<select id="endpoint" disabled>
+							<option value="http://localhost:3000/dist/rsplayer.js"">DEV (localhost:3000/dist/rsplayer.js)</option>
+							<option value="https://not.yet.com"">PROD</option>
+						</select>
+						<br/>
+						<input type="checkbox" id="rsp_debug" checked disabled/>
+						<label for="rsp_debug">Debug log</label>
+					</div>
+					<div class="setting">
+         		<b>Format:</b>	
+						<select id="format-select">
+							<option value="slider">Slider</option>
+							<option value="intext">InText</option>
+						</select>
+					</div>
+					<div class="setting">
+						<b>VAST URL:</b>
+						<script>
+							function updateVAST(select) {
+								document.getElementById("vastUrl").value = select.value
+							}
+							</script>
+						<select id="vastUrlSelect" onchange="updateVAST(this);">
+							<option value="https://ads.stickyadstv.com/vast/vpaid-adapter/2003">Freewheel VPAID</option>
+							<option value="https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSetup&protocolVersion=2.0&zoneId=2003">Freewheel VIDEO</option>
+							<option value="http://localhost:3000/docs/vast/video_omid.xml">Video with OMID</option>
+							<option value="http://localhost:3000/docs/vast/vpaid.xml">VPAID with Viewability</option>
+						</select>
+
+						<br/><br/>
+						Or paste another url here:
+						<input id="vastUrl" type="text" style="width:100%;" value="https://ads.stickyadstv.com/vast/vpaid-adapter/2003"/>
+					</div>
+					<div class="setting">
+						<button onclick="changeTest()">APPLY</button>
+					</div>
+        </div>
+        <div class="fake-text">
+        	<p>
+        		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Sed ullamcorper morbi tincidunt ornare massa. Purus viverra accumsan in nisl nisi scelerisque. Proin sed libero enim sed faucibus turpis in eu. Diam donec adipiscing tristique risus nec feugiat in fermentum posuere. Tempor nec feugiat nisl pretium fusce. Mauris vitae ultricies leo integer malesuada nunc. Rhoncus mattis rhoncus urna neque viverra justo. Sit amet luctus venenatis lectus magna. Eu scelerisque felis imperdiet proin fermentum leo vel. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Montes nascetur ridiculus mus mauris vitae ultricies leo integer. Tristique senectus et netus et malesuada fames ac turpis egestas. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Vitae elementum curabitur vitae nunc sed velit. Pretium viverra suspendisse potenti nullam ac tortor. Eu facilisis sed odio morbi quis commodo odio.
+        	</p>
+					<p>
+        		Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Diam sollicitudin tempor id eu nisl nunc mi. Nulla posuere sollicitudin aliquam ultrices sagittis. Arcu non odio euismod lacinia at quis risus. Sit amet tellus cras adipiscing enim eu turpis egestas. Ut tristique et egestas quis. Dolor magna eget est lorem. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Sed libero enim sed faucibus turpis in eu mi. Dui ut ornare lectus sit. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Nec feugiat nisl pretium fusce id velit ut tortor. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Vulputate mi sit amet mauris commodo quis. Viverra orci sagittis eu volutpat. Lorem donec massa sapien faucibus.
+        	</p>
+        	<p>
+        		Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Diam sollicitudin tempor id eu nisl nunc mi. Nulla posuere sollicitudin aliquam ultrices sagittis. Arcu non odio euismod lacinia at quis risus. Sit amet tellus cras adipiscing enim eu turpis egestas. Ut tristique et egestas quis. Dolor magna eget est lorem. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Sed libero enim sed faucibus turpis in eu mi. Dui ut ornare lectus sit. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Nec feugiat nisl pretium fusce id velit ut tortor. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Vulputate mi sit amet mauris commodo quis. Viverra orci sagittis eu volutpat. Lorem donec massa sapien faucibus.
+        	</p>
+					<div id="target" style="display:flex;justify-content:center;"></div>
+        	<p>
+					Pellentesque eu tincidunt tortor aliquam. Molestie a iaculis at erat pellentesque adipiscing commodo. Duis at consectetur lorem donec massa sapien faucibus et molestie. Mattis pellentesque id nibh tortor. Sodales ut etiam sit amet nisl. In tellus integer feugiat scelerisque varius. Non diam phasellus vestibulum lorem. A lacus vestibulum sed arcu non odio euismod lacinia. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Ridiculus mus mauris vitae ultricies leo integer malesuada. Ultricies mi eget mauris pharetra et. Tristique et egestas quis ipsum suspendisse ultrices. Neque sodales ut etiam sit amet. Netus et malesuada fames ac turpis egestas maecenas. Erat nam at lectus urna duis.
+					</p>
+					<p>
+        		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Sed ullamcorper morbi tincidunt ornare massa. Purus viverra accumsan in nisl nisi scelerisque. Proin sed libero enim sed faucibus turpis in eu. Diam donec adipiscing tristique risus nec feugiat in fermentum posuere. Tempor nec feugiat nisl pretium fusce. Mauris vitae ultricies leo integer malesuada nunc. Rhoncus mattis rhoncus urna neque viverra justo. Sit amet luctus venenatis lectus magna. Eu scelerisque felis imperdiet proin fermentum leo vel. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Montes nascetur ridiculus mus mauris vitae ultricies leo integer. Tristique senectus et netus et malesuada fames ac turpis egestas. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Vitae elementum curabitur vitae nunc sed velit. Pretium viverra suspendisse potenti nullam ac tortor. Eu facilisis sed odio morbi quis commodo odio.
+        	</p>
+        </div>
+
+
+
+       
+				<script type="text/javascript">
+
+					function findGetParameter(parameterName) {
+						var result = null,
+								tmp = [];
+						location.search
+							.substr(1)
+							.split("&")
+							.forEach(function (item) {
+								tmp = item.split("=");
+								if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+							});
+						return result;
+					}
+
+					function getKeyForValue(array, value, defaultValue){
+							var result = null;
+							for(key in array){
+									if(array[key] == value) result = key;
+							} 
+
+							return result || defaultValue;
+					}
+
+					function changeTest() {
+							var currentUrl = document.location.href;
+							var indexOfQueryStr = currentUrl.lastIndexOf('?');
+							if(indexOfQueryStr !== -1) {
+									currentUrl = currentUrl.substr(0, indexOfQueryStr);
+							}
+							
+							var targetFormat = document.getElementById("format-select").value;
+							var endpoint = document.getElementById("endpoint").value;
+							var vastUrl = document.getElementById("vastUrl").value;
+
+							document.location.href = currentUrl+"?format="+targetFormat
+								+"&env="+endpoint
+								+"&RSPLAYER_LOG=DEBUG"
+								+"&vastUrl="+encodeURIComponent(vastUrl)
+					}
+
+					var adformat = findGetParameter("format") || "slider";
+					document.getElementById("format-select").value = adformat;
+
+					var endpoint = findGetParameter("env") || "http://localhost:3000/dist/rsplayer.js";
+
+					var vastUrl = findGetParameter("vastUrl") || "https://ads.stickyadstv.com/vast/vpaid-adapter/2003";
+					
+					document.getElementById("vastUrl").value = vastUrl;
+					document.getElementById("vastUrlSelect").value = vastUrl;
+
+
+					var s = document.createElement("script");
+					s.src = endpoint;
+					s.onload = function(){
+						const RS = window.RetailSpot;
+
+						document.getElementById("rsp-version").innerText = RS.version;
+
+						const RetailSpotConfig = {
+							vastUrl,
+							width: 320,
+							height: 180,
+							//CSSSelector: "#target", // ignored by slider ad format
+							format: adformat,
+							//align: "left", // default is bottom right
+							//vmargin: 50, // default is 30
+							//hmargin: 50, // default is 30
+							//anim: "top" // default is 'auto': minimal distance animation
+						}
+
+						RS.init(RetailSpotConfig, function(creative) {
+							creative.subscribe(function(){
+								console.log("RSPlayer: AdLoaded!");
+							}, RS.VPAID_EVENTS.AdLoaded);
+						});
+					}
+					document.body.appendChild(s);
+			</script>
+    </body>
+</html>
