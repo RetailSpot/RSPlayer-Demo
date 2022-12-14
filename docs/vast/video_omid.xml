@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?><VAST version='4.0'>
+ <Ad id='AdswizzAd813101602'>
+  <InLine>
+   <AdSystem>Adswizz</AdSystem>
+   <AdTitle><![CDATA[caprice-capture interstitiel]]></AdTitle>
+   <Description><![CDATA[caprice-capture interstitiel]]></Description>
+   <Error><![CDATA[https://ads.stickyadstv.com/error-tracking/?adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=8693204&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&errorCode=[ERRORCODE]&]]></Error>
+   <Impression id='813101602'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsDisplayStarted&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=5583583&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&listenerId=da7243315b1a6b40a3de78e8dcda40&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&campaignId=270638385&]]></Impression>
+   <ViewableImpression id="1543">
+     <Viewable>
+       <![CDATA[http://search.iabtechlab.com/viewable?imprid=s5-ea2f7f298e28c0c98374491aec3dfeb1&ts=1243]]>
+     </Viewable>
+     <NotViewable>
+       <![CDATA[http://search.iabtechlab.com/notviewable?imprid=s5-ea2f7f298e28c0c98374491aec3dfeb1&ts=1243]]>
+     </NotViewable>
+     <ViewUndetermined>
+       <![CDATA[http://search.iabtechlab.com/viewUndetermined?&imprid=s5-ea2f7f298e28c0c98374491aec3dfeb1&ts=1243]]>
+     </ViewUndetermined>
+   </ViewableImpression>
+   <Creatives>
+    <Creative id='813101602' sequence='1'>
+     <Linear>
+      <Duration>00:00:30</Duration>
+      <TrackingEvents>
+       <Tracking event='start'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=1066088&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&displayPercentage=0&time=0&tagsArray=&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&]]></Tracking>
+       <Tracking event='firstQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=7794676&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&displayPercentage=25&time=7&tagsArray=&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&]]></Tracking>
+       <Tracking event='midpoint'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=3249688&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&displayPercentage=50&time=15&tagsArray=&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&]]></Tracking>
+       <Tracking event='thirdQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=4274567&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&displayPercentage=75&time=22&tagsArray=&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&]]></Tracking>
+       <Tracking event='complete'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsDisplayEnd&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=4373374&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&ibpiv=e645941615c9e7526ff2c2a2ea182d64&displayPercentage=100&time=30&tagsArray=&ibp=04b39544e878734ba9f7b492f9435de1b2792e9bdd8fee44b9fb6ab477b35774afed88595687b8af9df70fe0f62efe89&]]></Tracking>
+      </TrackingEvents>
+      <MediaFiles>
+       <MediaFile delivery='progressive' bitrate='672' width='368' height='276' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://cdn.stickyadstv.com/www/images/813101602-web-MP4-5a6b22dca2f41.mp4]]></MediaFile>
+      </MediaFiles>
+      <VideoClicks>
+       <ClickThrough id='813101602'><![CDATA[https://www.perdu.com]]></ClickThrough>
+       <ClickTracking id='813101602'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=ClickTracking&adId=813101602&viewKey=1652379435988091-566&sessionId=bfdbc1e3cc75cd46378e74c99914d5&zoneId=2003&impId=1&cb=4626682&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&clickX=[clickX]&clickY=[clickY]&time=[timestamp]&tagsArray=&]]></ClickTracking>
+      </VideoClicks>
+     </Linear>
+    </Creative>
+   </Creatives>
+   
+  <Extensions>
+    <Extension type="AdVerifications"><AdVerifications><Verification vendor="iabtechlab.com-omid"><JavaScriptResource apiFramework="omid" browserOptional="true"><![CDATA[https://s3-us-west-2.amazonaws.com/omsdk-files/compliance-js/omid-validation-verification-script-v1-FREEWHEELTV-11082021.js]]></JavaScriptResource><VerificationParameters><![CDATA[iabtechlab-Freewheeltv]]></VerificationParameters></Verification></AdVerifications></Extension>   
+  </Extensions>
+  </InLine>
+ </Ad>
+</VAST>
