@@ -1,11 +1,58 @@
 <html>
+  <head>
+    <style>
+      body {
+        background-color: #0063c9;
+        color: white;
+        margin: 4px;
+      }
+
+      .background {
+        display: block;
+        background-color: #080D2A;
+        border: 0px solid #0063c9;
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      button {
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+        height: 30px;
+        width: 200px;
+        cursor: pointer;
+        margin: auto;
+        display: block;
+      }
+      .container {
+        margin:20px;
+      }
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
   <body>
-    <div style="display:block; width:300px; height:450px">
-      <h1>RetailSpot</h1>
-      This extension is showing current RetailSpot config found in the page.
-      <button id="reloadbutton">Reload</button>
-      You can change it and apply new config:
-      <button id="applybutton">Apply</button>
+    <div class="background">
+      <h1 class="center">RetailSpot</h1>
+      <div class="container center">
+        This extension loads a RetailSpot Ad into the web page to generate an advertisement preview.
+      </div>
+      <h3>Config</h3>
+      <div class="container">
+        <b>Format:</b>	
+        <select id="format-select">
+          <option value="slider">Slider</option>
+          <option value="intext">InText</option>
+          <option value="ingrid">InGrid</option>
+        </select>
+      </div>
+
+      <div class="container">
+        <button id="applybutton">See preview</button>
+      <div>
     </div>
     
     <script src="popup.js"></script>
