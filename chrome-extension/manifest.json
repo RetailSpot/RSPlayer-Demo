@@ -16,5 +16,6 @@
     "js": ["content-script.js"],
     "matches": ["<all_urls>"]
   }],
-  "web_accessible_resources": ["loader.js"]
+  "web_accessible_resources": ["loader.js"],
+  "content_security_policy" : "script-src 'self' retailspot.github.io;"
 }

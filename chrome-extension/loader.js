@@ -16,6 +16,7 @@ function showAd(config) {
       creative.subscribe(function(){
         console.log("RSPlayer - Extension: AdLoaded!");
       }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
+    });
   }
 }
 
@@ -25,5 +26,6 @@ window.postMessage({type: "RS_FROM_PAGE", config: window.RetailSpotConfig});
 window.addEventListener("message",  (event) => {
   if(event.data.type === "RS_FROM_EXT") {
     console.log("Received new config: ", event.data.config);
+    showAd(event.data.config);
   }
 });

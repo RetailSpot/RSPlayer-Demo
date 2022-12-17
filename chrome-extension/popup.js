@@ -1,5 +1,5 @@
 const RetailSpotConfig = {
-  vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/video_omid.xml",
+  vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/video.xml",
   //placement: "eq-8-560837-1702737-118062",
   //mediatype: "native",
   align: "right",
