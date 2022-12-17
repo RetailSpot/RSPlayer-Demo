@@ -24,7 +24,6 @@
       </VideoClicks>
       <MediaFiles>
        <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://cdn.stickyadstv.com/www/images/727435745-web-MP4-5a0043284a54e.mp4]]></MediaFile>
-       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='application/javascript' scalable='true' maintainAspectRatio='true' apiFramework='VPAID'><![CDATA[https://cdn.stickyadstv.com/mustang/hedgehog.min.js?firstStage=https%3A%2F%2Fcdn.stickyadstv.com%2Fwww%2Fimages%2F727435745-web-MP4-5a0043284a54e.mp4&firstStage_adWidth=640&firstStage_adHeight=360&firstStage_adDuration=20&close=disabled&linear=true&clickTAG=https%3A%2F%2Fads.stickyadstv.com%2Fwww%2Fdelivery%2FswfIndex.php%3FreqType%3DAdsClickThrough%26adId%3D727435745%26viewKey%3D1671289617309063-550%26sessionId%3D1671289617309064-550%26zoneId%3D2003%26impId%3D1%26cb%3D3055292%26trackingIds%3D28161297%252C28161329%252C29847601%252C29967745%252C61392385%252C98035954%26url%3Dhttps%253A%252F%252Fwww.google.fr%252F%26]]></MediaFile>
       </MediaFiles>
      </Linear>
     </Creative>
