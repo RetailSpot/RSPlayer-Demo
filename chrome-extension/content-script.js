@@ -6,11 +6,11 @@ window.addEventListener("message", (event) => {
 }, false);
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-
   console.log("content_script receive: ", message);
-  if(message.data.type === "RS_FROM_EXT") {
-    console.log("content_script receive from ext: ", message.data);
-    window.postMessage({type: message.data.type, config: window.data.config});
+
+  if(message.type === "RS_FROM_EXT") {
+    console.log("content_script receive from ext: ", message);
+    window.postMessage(message);
   }
 });
 
