@@ -3,12 +3,19 @@ const RetailSpotConfig = {
   //placement: "eq-8-560837-1702737-118062",
   //mediatype: "native",
   align: "right",
-  //CSSSelector: "#target", // ignored by slider ad format
+  //CSSSelector: "", // ignored by slider ad format
   format: "slider",
   //align: "left", // default is bottom right
   //vmargin: 50, // default is 30
   //hmargin: 50, // default is 30
   //anim: "top" // default is 'auto': minimal distance animation
+}
+
+function disabledFor(element, sec){
+  element.setAttribute("disabled", "");
+  setTimeout(() => {
+    element.removeAttribute("disabled");
+  }, sec * 1000)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,9 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // when click on apply, send new config to page
-  var apply = document.getElementById('applybutton');
-  // onClick's logic below:
-  apply.addEventListener('click', function() {
+  var applyButton = document.getElementById('applybutton');
+  applyButton.addEventListener('click', function() {
+    RetailSpotConfig.format = document.getElementById('format-select').value;
+
+    disabledFor(applyButton, 10);
     console.log("sending config from ext");
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       console.log("sending config from ext to tab : ", tabs[0].id);
