@@ -32,6 +32,13 @@
         cursor: default;
       }
 
+      label {
+        cursor: pointer;
+      }
+      input {
+        cursor: pointer;
+      }
+
       .main-container {
         background-color: #2d324f;
         display: block;
@@ -39,8 +46,13 @@
         border-radius: 8px;
         padding: 16px;
       }
-
+      .config-container {
+        min-height: 135px;
+      }
       .container {
+        margin:20px;
+      }
+      .field {
         margin:20px;
       }
       .center {
@@ -55,14 +67,31 @@
         This extension loads a RetailSpot Ad into the web page to generate an advertisement preview.
       </div>
       <div class="main-container">
-        <h3>Config</h3>
-        <div class="container">
-          <b>Format:</b>	
-          <select id="format-select">
-            <option value="slider">Slider</option>
-            <option value="intext">InText</option>
-            <option value="ingrid">InGrid</option>
-          </select>
+        <div class="config-container">
+          <h3>Config</h3>
+          <div class="container">
+            <div class="field">
+              <b>Format:</b>	
+              <select id="format-select">
+                <option value="slider">Slider</option>
+                <option value="intext">InText</option>
+                <option value="ingrid">InGrid</option>
+              </select>
+            </div>
+            <div class="field show-ingrid" style="display:none;">
+              <div class="check-container">
+                <input type="checkbox" id="native-check" checked/>
+                <label for="native-check">Native ad</label>
+              </div>
+            </div>
+            <div class="field show-ingrid show-slider">
+              <b>Align:</b>	
+              <select id="align-select">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <div class="container">

@@ -18,6 +18,24 @@ function disabledFor(element, sec){
   }, sec * 1000)
 }
 
+function updateFields(format) {
+  Array.from(document.getElementsByClassName("show-intext")).forEach(el => {
+    el.style.display = "none";
+  });
+  Array.from(document.getElementsByClassName("show-ingrid")).forEach(el => {
+    el.style.display = "none";
+  });
+  Array.from(document.getElementsByClassName("show-intext")).forEach(el => {
+    el.style.display = "none";
+  });
+
+  Array.from(document.getElementsByClassName("show-"+format)).forEach(el => {
+    el.style.display = "";
+  });
+}
+document.getElementById("format-select").onchange = (event)=> {updateFields(event.target.value)};
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const bg = chrome.extension.getBackgroundPage();
 
@@ -31,7 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // when click on apply, send new config to page
   var applyButton = document.getElementById('applybutton');
   applyButton.addEventListener('click', function() {
+    // read config from form
     RetailSpotConfig.format = document.getElementById('format-select').value;
+    if(document.getElementById('native-check').checked){
+      RetailSpotConfig.mediatype = "native";
+    }
+    RetailSpotConfig.align = document.getElementById('align-select').value;
+
 
     disabledFor(applyButton, 10);
     console.log("sending config from ext");
