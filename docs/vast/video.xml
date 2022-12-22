@@ -23,7 +23,7 @@
        <CustomClick id='727435745'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsClicked&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3185252&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&clickX=[clickX]&clickY=[clickY]&time=[timestamp]&tagsArray=&]]></CustomClick>
       </VideoClicks>
       <MediaFiles>
-       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://cdn.stickyadstv.com/www/images/727435745-web-MP4-5a0043284a54e.mp4]]></MediaFile>
+       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://retailspot.github.io/RSPlayer-Demo/vast/tiktok.mov]]></MediaFile>
       </MediaFiles>
      </Linear>
     </Creative>
