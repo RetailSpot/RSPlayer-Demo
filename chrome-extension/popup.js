@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
   applyButton.addEventListener('click', function() {
     // read config from form
     RetailSpotConfig.format = document.getElementById('format-select').value;
-    if(document.getElementById('native-check').checked){
+    RetailSpotConfig.align = document.getElementById('align-select').value;
+    RetailSpotConfig.ingridSize = document.getElementById('size-select').value;
+    if(RetailSpotConfig.format === 'ingrid' && document.getElementById('native-check').checked){
       RetailSpotConfig.mediatype = "native";
     }
-    RetailSpotConfig.align = document.getElementById('align-select').value;
-
 
     disabledFor(applyButton, 10);
     console.log("sending config from ext");
