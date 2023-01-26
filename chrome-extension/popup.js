@@ -3,6 +3,7 @@ const RetailSpotConfig = {
   //placement: "eq-8-560837-1702737-118062",
   //mediatype: "native",
   align: "right",
+  height:"224",
   //CSSSelector: "", // ignored by slider ad format
   format: "slider",
   //align: "left", // default is bottom right
