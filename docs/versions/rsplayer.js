@@ -531,6 +531,7 @@ var PlaceholderElements = /*#__PURE__*/function () {
         }
         return sortTexts(a, b);
       };
+      _src_log__WEBPACK_IMPORTED_MODULE_0__.logger.log(_src_log__WEBPACK_IMPORTED_MODULE_0__.LOG_LEVEL.DEBUG, 'All text Elmts : ', this.textEls);
 
       // extract main and seconary texts ( according to font size and length)
       this.textEls.sort(sortTexts);
