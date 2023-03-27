@@ -545,6 +545,12 @@ var PlaceholderElements = /*#__PURE__*/function () {
         return b.innerText.trim().length - a.innerText.trim().length;
       });
       this.desc = this.descEls.shift();
+      if (!this.desc) {
+        this.textEls.sort(function (a, b) {
+          return b.innerText.trim().length - a.innerText.trim().length;
+        });
+        this.desc = this.textEls.shift();
+      }
 
       // sort buttons with same criterions as texts
       this.buttonsEls.sort(sortTexts);
