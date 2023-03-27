@@ -532,7 +532,7 @@ var PlaceholderElements = /*#__PURE__*/function () {
         return sortTexts(a, b);
       };
       (0,_src_log__WEBPACK_IMPORTED_MODULE_0__.logger)(_src_log__WEBPACK_IMPORTED_MODULE_0__.LOG_LEVEL.DEBUG, 'All text Elmts : ', this.textEls);
-
+      debugger;
       // extract main and seconary texts ( according to font size and length)
       this.textEls.sort(sortTexts);
       // as text are sorted by fontSize, the biggest one get the title
