@@ -1,0 +1,99 @@
+
+<html>
+
+  <head>
+      <link rel="icon" type="image/png" href="/favicon.png">
+      <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+      <script async src="./prebid.js"></script>
+
+      <script>
+
+          
+          var env = document.location.host.indexOf("dev") === 0 ? "dev" : "";
+
+          var PREBID_TIMEOUT = 5000;
+          var FAILSAFE_TIMEOUT = 10000;
+
+          var div_1_sizes = [[300, 600]];
+          var adUnits = [
+              {
+                  code: '/19968336/header-bid-tag-0',
+                  mediaTypes: {
+                      banner: {
+                          sizes: div_1_sizes
+                      }
+                  },
+                  bids: [{
+                      bidder: 'retailspot',
+                      params: {
+                          placement: 'test-1234'
+                      }
+                  }]
+              }
+          ];
+
+          // ======== DO NOT EDIT BELOW THIS LINE =========== //
+          var googletag = googletag || {};
+          googletag.cmd = googletag.cmd || [];
+          googletag.cmd.push(function() {
+              googletag.pubads().disableInitialLoad();
+          });
+
+          var pbjs = pbjs || {};
+          pbjs.que = pbjs.que || [];
+
+          pbjs.que.push(function() {
+
+
+              pbjs.addAdUnits(adUnits);
+              pbjs.requestBids({
+                  bidsBackHandler: initAdserver,
+                  timeout: PREBID_TIMEOUT
+              });
+          });
+
+          function initAdserver() {
+              if (pbjs.initAdserverSet) return;
+              pbjs.initAdserverSet = true;
+              googletag.cmd.push(function() {
+                  pbjs.que.push(function() {
+                      pbjs.setTargetingForGPTAsync();
+                      googletag.pubads().refresh();
+                  });
+              });
+          }
+          // in case PBJS doesn't load
+          setTimeout(function() {
+              initAdserver();
+          }, FAILSAFE_TIMEOUT);
+
+          googletag.cmd.push(function() {
+              googletag.defineSlot('/19968336/header-bid-tag-0', div_1_sizes, 'div-1').addService(googletag.pubads());
+              googletag.pubads().enableSingleRequest();
+              googletag.enableServices();
+          });
+
+
+      </script>
+
+  </head>
+
+  <body>
+      <h2>Basic Prebid.js Example</h2>
+      <h5>Div-1</h5>
+      <div id='div-1'>
+          <script type='text/javascript'>
+              googletag.cmd.push(function() {
+                  googletag.display('div-1');
+              });
+
+          </script>
+      </div>
+
+      <br>
+
+
+
+  </body>
+
+</html>

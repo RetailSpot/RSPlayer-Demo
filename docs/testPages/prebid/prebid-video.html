@@ -1,0 +1,202 @@
+---
+title: Prebid Video
+tags: [testpage]
+parameters: [Placement, Env, Width, Height]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Test Prebid</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/test_page.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    
+    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <script async src="prebid.js"></script>
+
+    <script>
+      const urlParams = new URLSearchParams(
+        window.location.search.toLowerCase()
+      );
+      let env = urlParams.get("env") || "";
+      let placement = urlParams.get("placement") || "test-1234";
+      let context = urlParams.get("context") || "outstream";
+      var width = parseInt(urlParams.get("width") || 300);
+      var height = parseInt(urlParams.get("height") || 250);
+
+      var div_1_sizes = [
+        [width, height]
+      ];
+
+      var PREBID_TIMEOUT = 6000;
+      var FAILSAFE_TIMEOUT = 10000;
+
+      var adUnits = [
+        {
+          code: "video1",
+          mediaTypes: {
+            video: {
+              playerSize: div_1_sizes,
+              context: context,
+            },
+          },
+          renderer: {
+            url: '../assets/player/bundle.js',
+            render: function (bid) {
+              var config = {
+                width: 640,
+                height: 480,
+                vastTimeout: 5000,
+                maxAllowedVastTagRedirects: 3,
+                allowVpaid: false,
+                autoPlay: true,
+                preload: true,
+                mute: true,
+                adText: 'This is sample adtext.'
+              };
+              setTimeout( () => {
+                try{
+                  window.player = outstreamPlayer(bid, 'video1', config);
+                }catch(e){
+                  console.error(e);
+                  console.error("Error in ad rendering!");
+                }
+              }, 3000);
+            }
+          },
+          bids: [
+            {
+              bidder: "retailspot",
+              params: {
+                placement: placement,
+                env: env,
+              },
+            },
+          ],
+        },
+      ];
+
+      // ======== DO NOT EDIT BELOW THIS LINE =========== //
+      var pbjs = pbjs || {};
+      pbjs.que = pbjs.que || [];
+
+      pbjs.que.push(function () {
+        pbjs.addAdUnits(adUnits);
+        pbjs.setConfig({debug: true});
+        pbjs.requestBids({
+          bidsBackHandler: function(bids) {
+            var highestCpmBids = pbjs.getHighestCpmBids('video1');
+                    
+            if(highestCpmBids.length > 0){
+              pbjs.renderAd(document, highestCpmBids[0].adId);
+            } else {
+              console.warn("No 'Highest Cpm bid' received.");
+            }
+          },
+          timeout: PREBID_TIMEOUT,
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="feed">
+          <div class="demo-article">
+            <div class="first-image"></div>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+            <p>
+              Nosti, credo, illud: Nemo pius est, qui pietatem-; Nulla profecto
+              est, quin suam vim retineat a primo ad extremum. At enim, qua in
+              vita est aliquid mali, ea beata esse non potest.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div id="video1"></div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Cum audissem Antiochum, Brute, ut solebam, cum M.</h4>
+            <p>
+              Qui ita affectus, beatum esse numquam probabis; Videmusne ut pueri
+              ne verberibus quidem a contemplandis rebus perquirendisque
+              deterreantur? Duarum enim vitarum nobis erunt instituta capienda.
+              Tamen a proposito, inquam, aberramus. Eam stabilem appellas. Non
+              quam nostram quidem, inquit Pomponius iocans;
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Sed haec in pueris;</h4>
+            <p>
+              Duo Reges: constructio interrete. Est igitur officium eius
+              generis, quod nec in bonis ponatur nec in contrariis. Ut proverbia
+              non nulla veriora sint quam vestra dogmata.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Sed haec in pueris;</h4>
+            <p>
+              At tu eadem ista dic in iudicio aut, si coronam times, dic in
+              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+              equidem non reprehendo; Quis est, qui non oderit libidinosam,
+              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+              illum redeo.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Sed haec in pueris;</h4>
+            <p>
+              At tu eadem ista dic in iudicio aut, si coronam times, dic in
+              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+              equidem non reprehendo; Quis est, qui non oderit libidinosam,
+              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+              illum redeo.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Sed haec in pueris;</h4>
+            <p>
+              At tu eadem ista dic in iudicio aut, si coronam times, dic in
+              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+              equidem non reprehendo; Quis est, qui non oderit libidinosam,
+              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+              illum redeo.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+          <div class="demo-article">
+            <div class="image"></div>
+            <h4>Sed haec in pueris;</h4>
+            <p>
+              At tu eadem ista dic in iudicio aut, si coronam times, dic in
+              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+              equidem non reprehendo; Quis est, qui non oderit libidinosam,
+              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+              illum redeo.
+            </p>
+            <span class="fake-sponsor">By John Doe, 15min ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
