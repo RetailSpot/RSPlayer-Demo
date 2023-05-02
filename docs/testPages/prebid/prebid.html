@@ -6,198 +6,201 @@ parameters: [placement, env, width, height]
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Test Prebid</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../assets/test_page.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test Prebid</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../assets/test_page.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
 
 
-    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
-    <script async src="prebid.js"></script>
+  <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+  <script async src="prebid.js"></script>
 
-    <script>
-      const urlParams = new URLSearchParams(
-        window.location.search.toLowerCase()
-      );
-      let env = urlParams.get("env") || "prod";
-      let placement = urlParams.get("placement") || "test-1234";
-      var width = parseInt(urlParams.get("width") || 300);
-      var height = parseInt(urlParams.get("height") || 250);
+  <script>
+    const urlParams = new URLSearchParams(
+      window.location.search.toLowerCase()
+    );
+    let env = urlParams.get("env") || "prod";
+    let placement = urlParams.get("placement") || "test-1234";
+    var width = parseInt(urlParams.get("width") || 300);
+    var height = parseInt(urlParams.get("height") || 250);
 
-      var div_1_sizes = [
-        [width, height]
-      ];
+    var div_1_sizes = [
+      [width, height]
+    ];
 
-      var PREBID_TIMEOUT = 6000;
-      var FAILSAFE_TIMEOUT = 10000;
+    var PREBID_TIMEOUT = 6000;
+    var FAILSAFE_TIMEOUT = 10000;
 
-      var adUnits = [
-          {
-              code: '/19968336/header-bid-tag-0',
-              mediaTypes: {
-                  banner: {
-                      sizes: div_1_sizes
-                  }
-              },
-              bids: [
-              {
-                bidder: 'retailspot',
-                params: {
-                    placement: 'test-1234',
-                    env: env
-                }
-              }]
+    var adUnits = [
+      {
+        code: '/19968336/header-bid-tag-0',
+        mediaTypes: {
+          banner: {
+            sizes: div_1_sizes
           }
-      ];
-
-      // ======== DO NOT EDIT BELOW THIS LINE =========== //
-      var googletag = googletag || {};
-      googletag.cmd = googletag.cmd || [];
-      googletag.cmd.push(function() {
-          googletag.pubads().disableInitialLoad();
-      });
-
-      var pbjs = pbjs || {};
-      pbjs.que = pbjs.que || [];
-
-      pbjs.que.push(function() {
-          pbjs.addAdUnits(adUnits);
-          pbjs.requestBids({
-              bidsBackHandler: initAdserver,
-              timeout: PREBID_TIMEOUT
-          });
-      });
-
-      function initAdserver() {
-          if (pbjs.initAdserverSet) return;
-          pbjs.initAdserverSet = true;
-          googletag.cmd.push(function() {
-              pbjs.que.push(function() {
-                  pbjs.setTargetingForGPTAsync();
-                  googletag.pubads().refresh();
-              });
-          });
+        },
+        bids: [
+          {
+            bidder: 'retailspot',
+            params: {
+              placement: 'test-1234',
+              format: 'intext',
+              env: env
+            }
+          }]
       }
-      // in case PBJS doesn't load
-      setTimeout(function() {
-          initAdserver();
-      }, FAILSAFE_TIMEOUT);
+    ];
 
-      googletag.cmd.push(function() {
-          googletag.defineSlot('/19968336/header-bid-tag-0', div_1_sizes, 'div-1').addService(googletag.pubads());
-          googletag.pubads().enableSingleRequest();
-          googletag.enableServices();
+    // ======== DO NOT EDIT BELOW THIS LINE =========== //
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function () {
+      googletag.pubads().disableInitialLoad();
+    });
+
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+
+    pbjs.que.push(function () {
+      pbjs.addAdUnits(adUnits);
+      pbjs.requestBids({
+        bidsBackHandler: initAdserver,
+        timeout: PREBID_TIMEOUT
       });
+    });
 
-    </script>
+    function initAdserver() {
+      if (pbjs.initAdserverSet) return;
+      pbjs.initAdserverSet = true;
+      googletag.cmd.push(function () {
+        pbjs.que.push(function () {
+          pbjs.setTargetingForGPTAsync();
+          googletag.pubads().refresh();
+        });
+      });
+    }
+    // in case PBJS doesn't load
+    setTimeout(function () {
+      initAdserver();
+    }, FAILSAFE_TIMEOUT);
 
-  </head>
-  <body>
-    <div class="jumbotron">
-      <div class="container">
-        <div class="feed">
-          <div class="demo-article">
-            <div class="first-image"></div>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-            <p>
-              Nosti, credo, illud: Nemo pius est, qui pietatem-; Nulla profecto
-              est, quin suam vim retineat a primo ad extremum. At enim, qua in
-              vita est aliquid mali, ea beata esse non potest.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
+    googletag.cmd.push(function () {
+      googletag.defineSlot('/19968336/header-bid-tag-0', div_1_sizes, 'div-1').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="feed">
+        <div class="demo-article">
+          <div class="first-image"></div>
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+          <p>
+            Nosti, credo, illud: Nemo pius est, qui pietatem-; Nulla profecto
+            est, quin suam vim retineat a primo ad extremum. At enim, qua in
+            vita est aliquid mali, ea beata esse non potest.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div style="width: 300px; margin: auto;">
           <div id="div-1">
             <script type='text/javascript'>
-              googletag.cmd.push(function() {
-                  googletag.display('div-1');
+              googletag.cmd.push(function () {
+                googletag.display('div-1');
               });
 
-          </script>
+            </script>
           </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Cum audissem Antiochum, Brute, ut solebam, cum M.</h4>
-            <p>
-              Qui ita affectus, beatum esse numquam probabis; Videmusne ut pueri
-              ne verberibus quidem a contemplandis rebus perquirendisque
-              deterreantur? Duarum enim vitarum nobis erunt instituta capienda.
-              Tamen a proposito, inquam, aberramus. Eam stabilem appellas. Non
-              quam nostram quidem, inquit Pomponius iocans;
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Sed haec in pueris;</h4>
-            <p>
-              Duo Reges: constructio interrete. Est igitur officium eius
-              generis, quod nec in bonis ponatur nec in contrariis. Ut proverbia
-              non nulla veriora sint quam vestra dogmata.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Sed haec in pueris;</h4>
-            <p>
-              At tu eadem ista dic in iudicio aut, si coronam times, dic in
-              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
-              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
-              equidem non reprehendo; Quis est, qui non oderit libidinosam,
-              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
-              illum redeo.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Sed haec in pueris;</h4>
-            <p>
-              At tu eadem ista dic in iudicio aut, si coronam times, dic in
-              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
-              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
-              equidem non reprehendo; Quis est, qui non oderit libidinosam,
-              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
-              illum redeo.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Sed haec in pueris;</h4>
-            <p>
-              At tu eadem ista dic in iudicio aut, si coronam times, dic in
-              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
-              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
-              equidem non reprehendo; Quis est, qui non oderit libidinosam,
-              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
-              illum redeo.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
-          <div class="demo-article">
-            <div class="image"></div>
-            <h4>Sed haec in pueris;</h4>
-            <p>
-              At tu eadem ista dic in iudicio aut, si coronam times, dic in
-              senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
-              parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
-              equidem non reprehendo; Quis est, qui non oderit libidinosam,
-              protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
-              illum redeo.
-            </p>
-            <span class="fake-sponsor">By John Doe, 15min ago</span>
-          </div>
+        </div>
+
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Cum audissem Antiochum, Brute, ut solebam, cum M.</h4>
+          <p>
+            Qui ita affectus, beatum esse numquam probabis; Videmusne ut pueri
+            ne verberibus quidem a contemplandis rebus perquirendisque
+            deterreantur? Duarum enim vitarum nobis erunt instituta capienda.
+            Tamen a proposito, inquam, aberramus. Eam stabilem appellas. Non
+            quam nostram quidem, inquit Pomponius iocans;
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Sed haec in pueris;</h4>
+          <p>
+            Duo Reges: constructio interrete. Est igitur officium eius
+            generis, quod nec in bonis ponatur nec in contrariis. Ut proverbia
+            non nulla veriora sint quam vestra dogmata.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Sed haec in pueris;</h4>
+          <p>
+            At tu eadem ista dic in iudicio aut, si coronam times, dic in
+            senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+            parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+            equidem non reprehendo; Quis est, qui non oderit libidinosam,
+            protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+            illum redeo.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Sed haec in pueris;</h4>
+          <p>
+            At tu eadem ista dic in iudicio aut, si coronam times, dic in
+            senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+            parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+            equidem non reprehendo; Quis est, qui non oderit libidinosam,
+            protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+            illum redeo.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Sed haec in pueris;</h4>
+          <p>
+            At tu eadem ista dic in iudicio aut, si coronam times, dic in
+            senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+            parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+            equidem non reprehendo; Quis est, qui non oderit libidinosam,
+            protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+            illum redeo.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
+        </div>
+        <div class="demo-article">
+          <div class="image"></div>
+          <h4>Sed haec in pueris;</h4>
+          <p>
+            At tu eadem ista dic in iudicio aut, si coronam times, dic in
+            senatu. Eadem fortitudinis ratio reperietur. Et non ex maxima
+            parte de tota iudicabis? Sed quot homines, tot sententiae; Quod
+            equidem non reprehendo; Quis est, qui non oderit libidinosam,
+            protervam adolescentiam? Verum hoc idem saepe faciamus. Sed ad
+            illum redeo.
+          </p>
+          <span class="fake-sponsor">By John Doe, 15min ago</span>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
