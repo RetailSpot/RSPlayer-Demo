@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
   applyButton.addEventListener('click', function() {
     // read config from form
     RetailSpotConfig.format = document.getElementById('format-select').value;
+    RetailSpotConfig.content = document.getElementById('content-select').value;
     RetailSpotConfig.align = document.getElementById('align-select').value;
     RetailSpotConfig.ingridSize = document.getElementById('size-select').value;
     if(RetailSpotConfig.format === 'ingrid' && document.getElementById('native-check').checked){

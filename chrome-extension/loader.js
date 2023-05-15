@@ -1,20 +1,27 @@
 
-function loadRetailSpot(callback) {
+function loadRetailSpot(config, callback) {
+  var url = 'https://retailspot.github.io/RSPlayer-Demo/versions/rsplayer.js'
+  if(config.content === "atv") {
+    url = 'https://retailspot.github.io/RSPlayer-Demo/versions/rsatv.js'
+    url = 'http://localhost:3000/dist/rsatv.js'
+  }
   var s = document.createElement("script");
-  s.setAttribute("src", "https://retailspot.github.io/RSPlayer-Demo/versions/rsplayer.js");
+  s.setAttribute("src", url);
   s.setAttribute("async", "");
   s.onload = callback;
   document.body.appendChild(s);
 }
 
 function showAd(config) {
-	if(!window.RetailSpot) {
-    loadRetailSpot(() => { showAd(config) })
+  const initFunc = config.content === "atv" ? window.RSATV?.showVideo  : window.RetailSpot?.init
+
+	if(!initFunc) {
+    loadRetailSpot(config, () => { showAd(config) })
   }
   else {
-    window.RetailSpot.init(config, function(creative) {
+    initFunc(config, function(creative) {
       creative.subscribe(function(){
-        console.log("RSPlayer - Extension: AdLoaded!");
+        console.log("RSPlayer - Extension: Creative Loaded!");
       }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
     });
   }
