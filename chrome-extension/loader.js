@@ -3,7 +3,6 @@ function loadRetailSpot(config, callback) {
   var url = 'https://retailspot.github.io/RSPlayer-Demo/versions/rsplayer.js'
   if(config.content === "atv") {
     url = 'https://retailspot.github.io/RSPlayer-Demo/versions/rsatv.js'
-    url = 'http://localhost:3000/dist/rsatv.js'
   }
   var s = document.createElement("script");
   s.setAttribute("src", url);

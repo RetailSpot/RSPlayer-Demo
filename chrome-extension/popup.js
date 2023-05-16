@@ -19,7 +19,7 @@ function disabledFor(element, sec){
   }, sec * 1000)
 }
 
-function updateFields(format) {
+function onFormatChange(format) {
   Array.from(document.getElementsByClassName("show-intext")).forEach(el => {
     el.style.display = "none";
   });
@@ -34,8 +34,22 @@ function updateFields(format) {
     el.style.display = "";
   });
 }
-document.getElementById("format-select").onchange = (event)=> {updateFields(event.target.value)};
+document.getElementById("format-select").onchange = (event)=> {onFormatChange(event.target.value)};
 
+function onContentChange(content) {
+
+  if(content === 'atv') {
+    Array.from(document.getElementsByClassName("hide-product-disc")).forEach(el => {
+      el.style.display = "none";
+    });    
+  } else {
+    Array.from(document.getElementsByClassName("hide-product-disc")).forEach(el => {
+      el.style.display = "";
+    }); 
+  }
+
+}
+document.getElementById("content-select").onchange = (event)=> {onContentChange(event.target.value)};
 
 document.addEventListener('DOMContentLoaded', function() {
   const bg = chrome.extension.getBackgroundPage();
@@ -55,7 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
     RetailSpotConfig.content = document.getElementById('content-select').value;
     RetailSpotConfig.align = document.getElementById('align-select').value;
     RetailSpotConfig.ingridSize = document.getElementById('size-select').value;
-    if(RetailSpotConfig.format === 'ingrid' && document.getElementById('native-check').checked){
+    RetailSpotConfig.soundButton = document.getElementById('sound-check').value;
+    RetailSpotConfig.enlargeVideo = document.getElementById('enlarge-check').value;
+    RetailSpotConfig.videoBackground = document.getElementById('vid-bg-select').value;
+    RetailSpotConfig.videoFit = document.getElementById('vid-fit-select').value;
+    RetailSpotConfig.sponsoredAlign = document.getElementById('sponsored-align-select').value;
+    RetailSpotConfig.sponsoredLabel = document.getElementById('sponsored-label-input').value;
+    
+    if(RetailSpotConfig.content !== "atv" && RetailSpotConfig.format === 'ingrid' && document.getElementById('native-check').checked){
       RetailSpotConfig.mediatype = "native";
     }
 
