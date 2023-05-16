@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
     RetailSpotConfig.content = document.getElementById('content-select').value;
     RetailSpotConfig.align = document.getElementById('align-select').value;
     RetailSpotConfig.ingridSize = document.getElementById('size-select').value;
-    RetailSpotConfig.soundButton = document.getElementById('sound-check').value;
-    RetailSpotConfig.enlargeVideo = document.getElementById('enlarge-check').value;
+    RetailSpotConfig.soundButton = document.getElementById('sound-check').checked;
+    RetailSpotConfig.enlargeVideo = document.getElementById('enlarge-check').checked;
     RetailSpotConfig.videoBackground = document.getElementById('vid-bg-select').value;
     RetailSpotConfig.videoFit = document.getElementById('vid-fit-select').value;
     RetailSpotConfig.sponsoredAlign = document.getElementById('sponsored-align-select').value;
