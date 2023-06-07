@@ -1,11 +1,9 @@
 
-const vastUrlMap = {
-  'samsung': 'https://retailspot.github.io/RSPlayer-Demo/vast/samsung.xml',
-  'karcher': 'https://retailspot.github.io/RSPlayer-Demo/vast/karcher.xml',
-}
+const vastFolder = "https://retailspot.github.io/RSPlayer-Demo/vast/";
+
 
 const RetailSpotConfig = {
-  vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/video.xml",
+  //vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/video.xml",
   //placement: "eq-8-560837-1702737-118062",
   //mediatype: "native",
   align: "right",
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     // read config from form
-    RetailSpotConfig.vastUrl = vastUrlMap[document.getElementById('content-select').value];
+    RetailSpotConfig.vastUrl = vastFolder+document.getElementById('content-select').value;
     RetailSpotConfig.format = document.getElementById('format-select').value;
     RetailSpotConfig.content = document.getElementById('content-select').value;
     RetailSpotConfig.align = document.getElementById('align-select').value;

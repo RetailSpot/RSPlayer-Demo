@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?><VAST version='2.0'>
+ <Ad id='AdswizzAd727435745'>
+  <InLine>
+   <AdSystem>Adswizz</AdSystem>
+   <AdTitle><![CDATA[captureGAEjeremy]]></AdTitle>
+   <Description><![CDATA[captureGAEjeremy]]></Description>
+   <Error><![CDATA[https://ads.stickyadstv.com/error-tracking/?adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=9297172&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&errorCode=[ERRORCODE]&]]></Error>
+   <Impression id='727435745'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsDisplayStarted&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3480005&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&listenerId=7d12dcd3859815be72febc3caa767&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&campaignId=270638385&]]></Impression>
+   <Creatives>
+    <Creative id='727435745' sequence='1'>
+     <Linear>
+      <Duration>00:01:08</Duration>
+      <TrackingEvents>
+       <Tracking event='start'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3671101&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=0&time=0&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='firstQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2249368&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=25&time=5&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='midpoint'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3856841&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=50&time=10&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='thirdQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2332758&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=75&time=15&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='complete'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsDisplayEnd&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=1182980&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=100&time=20&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+      </TrackingEvents>
+      <AdParameters></AdParameters>
+      <VideoClicks>
+       <ClickThrough id='727435745'><![CDATA[https://hotels.com]]></ClickThrough>
+       <CustomClick id='727435745'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsClicked&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3185252&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&clickX=[clickX]&clickY=[clickY]&time=[timestamp]&tagsArray=&]]></CustomClick>
+      </VideoClicks>
+      <MediaFiles>
+       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://retailspot.github.io/RSPlayer-Demo/videos/karcher.mp4]]></MediaFile>
+      </MediaFiles>
+     </Linear>
+    </Creative>
+   </Creatives>
+   <Extensions></Extensions>
+  </InLine>
+ </Ad>
+</VAST>
