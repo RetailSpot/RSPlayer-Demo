@@ -1,5 +1,21 @@
 
+// constant demos DATA : vast url and mock native data 
 const vastFolder = "https://retailspot.github.io/RSPlayer-Demo/vast/";
+
+
+
+//complete select options with demo declared in contentChice.json
+const sel = document.getElementById("content-select");
+fetch("https://retailspot.github.io/RSPlayer-Demo/contentChoice.json")
+  .then((res) => res.json())
+  .then((demos) => {
+    Object.keys(demos).forEach((key) => {
+      const opt = document.createElement("option");
+      opt.value = key;
+      opt.text = demos[key];
+      sel.add(opt);
+    });
+  });
 
 
 const RetailSpotConfig = {
