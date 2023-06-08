@@ -2,74 +2,18 @@
 // constant demos DATA : vast url and mock native data 
 const vastFolder = "https://retailspot.github.io/RSPlayer-Demo/vast/";
 
-const nativeDataMap = {
-  "samsung.xml": {
-    "title": "Galaxy Z Flip 5G",
-    "price": "999 €",
-    "desc": "The shape of the future. Le Z FLip4 512Go au prix du 256Go !\nCoque au choix offerte",
-    "ctatext": "En savoir plus",
-    "domain": "Samsung",
-    "image": {
-      "url": "https: //imgart.casino.fr/imageserver/MC2/8/196608_M1_T1.jpg"
-    },
-    "brandLogo": {
-      "url": ""
-    },
-    "sponsoredLabel": ""
-  },
-  "karcher.xml": {
-    "title": "Nettoyeur de sols FC 5",
-    "price": "164,99 €",
-    "desc": "Élimine les saletés et les liquides renversés en un seul passage",
-    "ctatext": "En savoir plus",
-    "domain": "kaercher",
-    "image": {
-      "url": "https: //s1.kaercher-media.com/mam/10554000/mainproduct/84798/d4.jpg"
-    },
-    "brandLogo": {
-      "url": ""
-    },
-    "sponsoredLabel": ""
-  },
-  "nivea.xml": {
-    "title": "Lait corps sous la douche",
-    "price": "4,15 €",
-    "desc": "Nourrissant pour peaux trés sèches. Huile d'amande douce",
-    "ctatext": "En savoir plus",
-    "domain": "Nivea",
-    "image": {
-      "url": "https://www.nocibe.fr/fstrz/r/s/www.nocibe.fr/medias/produits/262414/262414-nivea-lait-nourrissant-huile-d-amande-douce-lait-corps-sous-la-douche-250ml-flacon-1000x1000.jpg?frz-v=5104"
-    },
-    "brandLogo": {
-      "url": ""
-    },
-    "sponsoredLabel": ""
-  },
-  "hotels-com.xml": {
-    "title": "facile et avantageux. Toujours.",
-    "price": "",
-    "desc": "Commencez à planifier votre prochaine escapade !",
-    "ctatext": "En savoir plus",
-    "domain": "Hotels.com",
-    "image": {
-      "url": "https://a.travel-assets.com/mad-service/footer/bnaBanners/HCOM_POOL_Stocksy_300dpi.jpg"
-    },
-    "brandLogo": {
-      "url": ""
-    },
-    "sponsoredLabel": ""
-  }
-}
+let nativeDataMap = {};
 
 //complete select options with demo declared in contentChice.json
 const sel = document.getElementById("content-select");
 fetch("https://retailspot.github.io/RSPlayer-Demo/contentChoice.json")
   .then((res) => res.json())
   .then((demos) => {
+    nativeDataMap = demos;
     Object.keys(demos).forEach((key) => {
       const opt = document.createElement("option");
       opt.value = key;
-      opt.text = demos[key];
+      opt.text = demos[key].domain;
       sel.add(opt);
     });
   });
@@ -171,13 +115,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-/*
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      // query the active tab, which will be only one tab
-      //and inject the script in it
-      chrome.tabs.executeScript(tabs[0].id, {
-        func: injectedFunction
-      });
-    });
-*/
