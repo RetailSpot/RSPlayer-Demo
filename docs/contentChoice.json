@@ -6,12 +6,12 @@
     "ctatext": "En savoir plus",
     "domain": "Samsung",
     "image": {
-      "url": "https: //imgart.casino.fr/imageserver/MC2/8/196608_M1_T1.jpg"
+      "url": "https://static.fnac-static.com/multimedia/Images/FR/MDM/25/28/30/19933221/1540-1/tsp20230721184113/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg"
     },
     "brandLogo": {
       "url": ""
     },
-    "sponsoredLabel": ""
+    "sponsoredLabel": "Sponsorisé"
   },
   "karcher.xml": {
     "title": "Nettoyeur de sols FC 5",
@@ -25,7 +25,7 @@
     "brandLogo": {
       "url": ""
     },
-    "sponsoredLabel": ""
+    "sponsoredLabel": "Sponsorisé"
   },
   "nivea.xml": {
     "title": "Lait corps sous la douche",
@@ -39,7 +39,7 @@
     "brandLogo": {
       "url": ""
     },
-    "sponsoredLabel": ""
+    "sponsoredLabel": "Sponsorisé"
   },
   "hotels-com.xml": {
     "title": "facile et avantageux. Toujours.",
@@ -53,6 +53,6 @@
     "brandLogo": {
       "url": ""
     },
-    "sponsoredLabel": ""
+    "sponsoredLabel": "Sponsorisé"
   }
 }
