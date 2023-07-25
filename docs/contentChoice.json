@@ -54,5 +54,61 @@
       "url": ""
     },
     "sponsoredLabel": "Sponsorisé"
-  }
+  },
+  "air_france.xml": {
+    "title": "AirFrance",
+    "price": "",
+    "desc": "Faire voler l'élégance toujours plus haut",
+    "ctatext": "En savoir plus",
+    "domain": "AirFrance",
+    "image": {
+      "url": "https://img.static-af.com/images/media/61AC170D-583D-4722-AE9EF0D35136DBB4/source/1440x720-lp-skytrax?w=320&aspect_ratio=2:1"
+    },
+    "brandLogo": {
+      "url": ""
+    },
+    "sponsoredLabel": "Sponsorisé"
+  },
+  "cofidis.xml": {
+    "title": "Assurance Auto",
+    "price": "",
+    "desc": "Les critères pour bien choisir son assurance auto",
+    "ctatext": "En savoir plus",
+    "domain": "Cofidis",
+    "image": {
+      "url": "https://www.cofidis.fr/fr/public/ACEassets/images/miniatures/credit_auto_02.webp"
+    },
+    "brandLogo": {
+      "url": ""
+    },
+    "sponsoredLabel": "Sponsorisé"
+  },
+  "dior.xml": {
+    "title": "Miss Dior",
+    "price": "64,90 €",
+    "desc": "Les fragrances Miss Dior invitent à de sublimes promenades olfactives.",
+    "ctatext": "En savoir plus",
+    "domain": "Dior",
+    "image": {
+      "url": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw19de8286/Y0996347/Y0996347_C099600764_E01_GHC.jpg?sw=300"
+    },
+    "brandLogo": {
+      "url": ""
+    },
+    "sponsoredLabel": "Sponsorisé"
+  },
+  "direct_assurance.xml": {
+    "title": "Direct Assurance - Habitation",
+    "price": "",
+    "desc": "L'assurance que vous risquez d'aimer",
+    "ctatext": "En savoir plus",
+    "domain": "direct-assurance.fr",
+    "image": {
+      "url": "https://images.axa-contento-118412.eu/directassurance/a8d4e6f0e049dcc0e587c9c10fb98f01cd2399e1_blog-prevention-cambriolage.jpg?version=5.0.135&q=75&fm=webp"
+    },
+    "brandLogo": {
+      "url": ""
+    },
+    "sponsoredLabel": "Sponsorisé"
+  },
 }
