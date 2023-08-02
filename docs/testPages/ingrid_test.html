@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RetailSpot test page</title>
+	<style type="text/css">
+		.grid {
+			width: 900px;
+			margin: auto;
+		}
+
+		.grid-item {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			float: left;
+			width: 199px;
+			height: 370px;
+			margin: 4px;
+			border: gray solid 1px;
+		}
+
+		.top-message {
+			width: 100px;
+			text-align: center;
+			font-weight: 600;
+			line-height: 30px;
+			height: 30px;
+			color: rgb(255 131 0);
+			background-color: rgb(255 235 165);
+		}
+
+		.content {
+			padding: 8px;
+		}
+
+
+		.img {
+			width: 100%;
+			height: auto;
+		}
+
+		.img img {
+			object-fit: cover;
+
+			width: 100%;
+			height: 180px;
+		}
+
+
+		.title {
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		.sold-by {
+			font-style: italic;
+		}
+
+		.price {
+			text-align: right;
+			font-size: 18px;
+			font-weight: 600;
+			color: red
+		}
+
+		body {
+			font-family: arial;
+		}
+
+		.setting {
+			margin: 20px;
+		}
+
+		.setting .label {
+			display: inline-block;
+			width: 120px;
+			font-weight: 600;
+		}
+	</style>
+	<script src="//acdn.adnxs.com/cmp/cmp.complete.bundle.js" async></script>
+
+</head>
+
+<body oncontextmenu="return false;">
+	<h1>RetailSpot player test page</h1>
+	<div>
+		Test config:
+		<ul>
+			<li>RSPlayer version: <b><span id="rsp-version"></span></b></li>
+
+		</ul>
+	</div>
+	<div>
+		<div class="setting">
+			<span class="label">Environment:</span>
+			<select id="endpoint">
+				<option value="https://static-preprod.retail-spot.io/rsplayer.js">PREPROD (static-preprod)</option>
+				<option value="https://static.retail-spot.io/rsplayer.js">PROD (static)</option>
+				<option value="http://localhost:3000/dist/rsplayer.js">DEV (localhost:3000/dist/rsplayer.js)</option>
+			</select>
+			<br />
+			<input type="checkbox" id="rsp_debug" checked disabled />
+			<label for="rsp_debug">Debug log</label>
+		</div>
+		<div class="setting">
+
+			<br />
+			<span class="label">Align:</span>
+			<select id="align-select">
+				<option value="left">Left</option>
+				<option value="right">Right</option>
+			</select>
+			<br />
+			<span class="label">Size:</span>
+			<select id="size-select">
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+				<option value="4">4</option>
+			</select>
+
+			<br />
+
+			<span class="label">Video position:</span>
+			<select id="mode-select">
+				<option value="aside-left">Aside Left</option>
+				<option value="aside-right">Aside Right</option>
+				<option value="inside">Video inside</option>
+			</select>
+		</div>
+		<div class="setting">
+			<input type="checkbox" id="nativeAd" checked> </input>
+			<label for="nativeAd">Native ad data</label>
+		</div>
+		<div class="setting">
+			<button onclick="changeTest()">APPLY</button>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<span class="top-message">promotion</span>
+			<div class="content">
+				<div class="img">
+					<img src="../resources/img_placeholder.png" />
+				</div>
+				<span class="title">Item title</span>
+				<p class="description">This is an item description. In order to describe the sold item.</p>
+				<div><span class="sold-by">brand</span></div>
+				<div class="price"><span>34.99 €</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+		function findGetParameter(parameterName) {
+			var result = null,
+				tmp = [];
+			location.search
+				.substr(1)
+				.split("&")
+				.forEach(function (item) {
+					tmp = item.split("=");
+					if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+				});
+			return result;
+		}
+
+		function getKeyForValue(array, value, defaultValue) {
+			var result = null;
+			for (key in array) {
+				if (array[key] == value) result = key;
+			}
+
+			return result || defaultValue;
+		}
+
+		function changeTest() {
+			var currentUrl = document.location.href;
+			var indexOfQueryStr = currentUrl.lastIndexOf('?');
+			if (indexOfQueryStr !== -1) {
+				currentUrl = currentUrl.substr(0, indexOfQueryStr);
+			}
+
+			var size = document.getElementById("size-select").value;
+			var align = document.getElementById("align-select").value;
+			var mode = document.getElementById("mode-select").value;
+			var endpoint = document.getElementById("endpoint").value;
+			var mediatype = document.getElementById("nativeAd").checked ? "native" : "video";
+
+			document.location.href = currentUrl + "?size=" + size
+				+ "&align=" + align
+				+ "&mode=" + mode
+				+ "&mediatype=" + mediatype
+				+ "&env=" + endpoint
+				+ "&rsp_debug=true"
+		}
+
+
+		var endpoint = findGetParameter("env") || "https://static-preprod.retail-spot.io/rsplayer.js";
+		var size = findGetParameter("size") || "3";
+		var align = findGetParameter("align") || "left";
+		var mode = findGetParameter("mode") || "aside-left";
+		var mediatype = findGetParameter("mediatype") || "native";
+
+		document.getElementById("size-select").value = size;
+		document.getElementById("align-select").value = align;
+		document.getElementById("mode-select").value = mode;
+		document.getElementById("nativeAd").checked = mediatype === "native";
+		document.getElementById("endpoint").value = endpoint
+
+
+		var s = document.createElement("script");
+		s.src = endpoint;
+		s.onload = function () {
+			const RS = window.RetailSpot;
+
+			document.getElementById("rsp-version").innerText = RS.version;
+
+			const RetailSpotConfig = {
+				vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/nivea.xml",
+				format: "ingrid",
+				align: align,
+				ingridSize: size,
+				videoPosition: mode,
+				mediatype: mediatype,
+				nativeData: {
+					"title": "Lait corps",
+					"price": "4,15 €",
+					"desc": "Nourrissant pour peaux trés sèches. Huile d'amande douce",
+					"ctatext": "En savoir plus",
+					"domain": "Nivea",
+					"image": {
+						"url": "https://www.nocibe.fr/fstrz/r/s/www.nocibe.fr/medias/produits/262414/262414-nivea-lait-nourrissant-huile-d-amande-douce-lait-corps-sous-la-douche-250ml-flacon-1000x1000.jpg?frz-v=5104"
+					},
+					"brandLogo": {
+						"url": ""
+					},
+					"sponsoredLabel": "sponsorisé"
+				}
+			}
+
+			RS.init(RetailSpotConfig, function (creative) {
+				creative.subscribe(function () {
+					console.log("RSPlayer: AdLoaded!");
+				}, RS.VPAID_EVENTS.AdLoaded);
+			});
+		}
+		document.body.appendChild(s);
+	</script>
+</body>
+
+</html>
