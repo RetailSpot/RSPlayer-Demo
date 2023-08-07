@@ -358,9 +358,14 @@
 			}
 
 			RS.init(RetailSpotConfig, function (creative) {
-				creative.subscribe(function () {
-					console.log("RSPlayer: AdLoaded!");
-				}, RS.VPAID_EVENTS.AdLoaded);
+				if (creative && creative.subscribe) {
+					creative.subscribe(function () {
+						console.log("RSPlayer: AdLoaded!");
+					}, RS.VPAID_EVENTS.AdLoaded);
+				}
+				else if (!creative) {
+					console.log("No Ad Creative.")
+				}
 			});
 		}
 		document.body.appendChild(s);
