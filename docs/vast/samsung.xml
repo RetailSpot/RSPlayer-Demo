@@ -28,8 +28,8 @@
      </Linear>
     </Creative>
    </Creatives>
-<Extensions>
-    <RSNativeAd>
+  <Extensions>
+    <Extension type="RSNativeAd">
       <Title><![CDATA[Galaxy Z Flip 5G]]></Title>
       <Price><![CDATA[999 €]]></Price>
       <Description><![CDATA[The shape of the future. Le Z FLip4 512Go au prix du 256Go !\nCoque au choix offerte]]></Description>
@@ -38,7 +38,7 @@
       <ImageUrl><![CDATA[https://static.fnac-static.com/multimedia/Images/FR/MDM/25/28/30/19933221/1540-1/tsp20230721184113/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg]]></ImageUrl>
       <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
-    </RSNativeAd>
+    </Extension>
    </Extensions>
   </InLine>
  </Ad>
