@@ -24,6 +24,7 @@
       </VideoClicks>
       <MediaFiles>
        <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://cdn.stickyadstv.com/www/images/1923863841-tv-mp4-6006ab69204df_4.mp4]]></MediaFile>
+       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://retailspot.github.io/RSPlayer-Demo/videos/samsung.mov]]></MediaFile>
       </MediaFiles>
      </Linear>
     </Creative>
