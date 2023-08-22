@@ -3,7 +3,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>RetailSpot test page</title>
+	<title>RetailSpot Ingrid test page</title>
 	<style type="text/css">
 		.grid {
 			width: 900px;
@@ -85,7 +85,7 @@
 </head>
 
 <body oncontextmenu="return false;">
-	<h1>RetailSpot player test page</h1>
+	<h1>RetailSpot player Ingrid test page</h1>
 	<div>
 		Test config:
 		<ul>
@@ -94,17 +94,6 @@
 		</ul>
 	</div>
 	<div>
-		<div class="setting">
-			<span class="label">Environment:</span>
-			<select id="endpoint">
-				<option value="https://static-preprod.retail-spot.io/rsplayer.js">PREPROD (static-preprod)</option>
-				<option value="https://static.retail-spot.io/rsplayer.js">PROD (static)</option>
-				<option value="http://localhost:3000/dist/rsplayer.js">DEV (localhost:3000/dist/rsplayer.js)</option>
-			</select>
-			<br />
-			<input type="checkbox" id="rsp_debug" checked disabled />
-			<label for="rsp_debug">Debug log</label>
-		</div>
 		<div class="setting">
 
 			<br />
@@ -130,10 +119,6 @@
 				<option value="aside-right">Aside Right</option>
 				<option value="inside">Video inside</option>
 			</select>
-		</div>
-		<div class="setting">
-			<input type="checkbox" id="nativeAd" checked> </input>
-			<label for="nativeAd">Native ad data</label>
 		</div>
 		<div class="setting">
 			<button onclick="changeTest()">APPLY</button>
@@ -296,33 +281,25 @@
 			var size = document.getElementById("size-select").value;
 			var align = document.getElementById("align-select").value;
 			var mode = document.getElementById("mode-select").value;
-			var endpoint = document.getElementById("endpoint").value;
-			var mediatype = document.getElementById("nativeAd").checked ? "native" : "video";
 
 			document.location.href = currentUrl + "?size=" + size
 				+ "&align=" + align
 				+ "&mode=" + mode
-				+ "&mediatype=" + mediatype
-				+ "&env=" + endpoint
-				+ "&rsp_debug=true"
 		}
 
 
-		var endpoint = findGetParameter("env") || "https://static-preprod.retail-spot.io/rsplayer.js";
+		var endpoint = findGetParameter("env") || "https://static-preprod.retailspotads.com/rsplayer.js";
 		var size = findGetParameter("size") || "3";
 		var align = findGetParameter("align") || "left";
 		var mode = findGetParameter("mode") || "aside-left";
-		var mediatype = findGetParameter("mediatype") || "native";
 
 		document.getElementById("size-select").value = size;
 		document.getElementById("align-select").value = align;
 		document.getElementById("mode-select").value = mode;
-		document.getElementById("nativeAd").checked = mediatype === "native";
-		document.getElementById("endpoint").value = endpoint
 
 
 		var s = document.createElement("script");
-		s.src = endpoint;
+		s.src = "https://static.retailspotads.com/rsplayer.js";
 		s.onload = function () {
 			const RS = window.RetailSpot;
 
@@ -334,21 +311,6 @@
 				align: align,
 				ingridSize: size,
 				videoPosition: mode,
-				mediatype: mediatype,
-				nativeData: {
-					"title": "Lait corps",
-					"price": "4,15 €",
-					"desc": "Nourrissant pour peaux trés sèches. Huile d'amande douce",
-					"ctatext": "En savoir plus",
-					"domain": "Nivea",
-					"image": {
-						"url": "https://www.nocibe.fr/fstrz/r/s/www.nocibe.fr/medias/produits/262414/262414-nivea-lait-nourrissant-huile-d-amande-douce-lait-corps-sous-la-douche-250ml-flacon-1000x1000.jpg?frz-v=5104"
-					},
-					"brandLogo": {
-						"url": ""
-					},
-					"sponsoredLabel": "sponsorisé"
-				}
 			}
 
 			RS.init(RetailSpotConfig, function (creative) {
