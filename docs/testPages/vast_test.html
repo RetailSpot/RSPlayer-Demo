@@ -38,7 +38,7 @@
   </div>
   <div>
     <div class="setting">
-      <b>ApiKey:</b>
+      <b>Partner ID:</b>
       <input type="text" id="apikey" />
       <br />
       <input type="checkbox" id="rsp_debug" checked disabled />
@@ -102,7 +102,7 @@
     }
     function applyVast() {
       const RetailSpotConfig = {
-        apikey: apikey,
+        partnerId: apikey,
         vast: document.getElementById("vast").value.trim(),
         width: 320,
         height: 180,
