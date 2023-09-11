@@ -27,8 +27,19 @@
       </MediaFiles>
      </Linear>
     </Creative>
-   </Creatives>
-   <Extensions></Extensions>
+  </Creatives>
+  <Extensions>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[Nettoyeur de sols FC 5]]></Title>
+      <Price><![CDATA[164,99 €]]></Price>
+      <Description><![CDATA[Élimine les saletés et les liquides renversés en un seul passage]]></Description>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[kaercher]]></Domain>
+      <ImageUrl><![CDATA[https: //s1.kaercher-media.com/mam/10554000/mainproduct/84798/d4.jpg]]></ImageUrl>
+      <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
+      <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
+    </Extension>
+  </Extensions>
   </InLine>
  </Ad>
 </VAST>
