@@ -123,6 +123,26 @@
         creative.subscribe(function (message) {
           document.getElementById("target").innerHTML = "";
         }, window.RetailSpot.VPAID_EVENTS.AdStopped);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoStart!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoStart);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoFirstQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoFirstQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoMidpoint!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoMidpoint);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoThirdQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoThirdQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoComplete!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoComplete);
       });
     }
 
