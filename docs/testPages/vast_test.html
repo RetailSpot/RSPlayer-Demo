@@ -63,6 +63,10 @@
   </div>
   <div id="target" style="display:flex;justify-content:center;"></div>
 
+  <button id="startButton" onclick="startAd()">Start/Restart</button>
+  <button id="playPauseButton" onclick="playPause()">Pause/Resume</button>
+  <button id="volumeButton" onclick="adjustVolume()">Volume</button>
+  <button id="stopButton" onclick="stopAd()">Stop</button>
   <script type="text/javascript">
 
     function findGetParameter(parameterName) {
@@ -109,9 +113,12 @@
         positionSelector: "#target",
         clickThruEnabled: true,
         closeButton: true,
+        autoplay: false,
       }
 
       window.RetailSpot.init(RetailSpotConfig, function (creative) {
+
+        vpaidControl = creative;
         creative.subscribe(function () {
           console.log("RSPlayer: AdLoaded!");
         }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
@@ -121,7 +128,12 @@
         }, window.RetailSpot.VPAID_EVENTS.AdError);
 
         creative.subscribe(function (message) {
+          console.log("RSPlayer: AdSkipped!");
           document.getElementById("target").innerHTML = "";
+        }, window.RetailSpot.VPAID_EVENTS.AdSkipped);
+
+        creative.subscribe(function (message) {
+          console.log("RSPlayer: AdStopped!");
         }, window.RetailSpot.VPAID_EVENTS.AdStopped);
 
         creative.subscribe(function () {
@@ -155,7 +167,109 @@
       document.getElementById("rsp-version").innerText = window.RetailSpot.version;
     }
     document.body.appendChild(s);
+
+
+    var isPlaying = false;
+    function startAd() {
+      isPlaying = true;
+      vpaidControl.startAd();
+    }
+    function playPause() {
+      if (isPlaying) {
+        isPlaying = false;
+        vpaidControl.pauseAd();
+      }
+      else {
+        isPlaying = true;
+        vpaidControl.resumeAd();
+      }
+    }
+    function adjustVolume() {
+      if (vpaidControl.getAdVolume()) {
+        vpaidControl.setAdVolume(0);
+      }
+      else {
+        vpaidControl.setAdVolume(1);
+      }
+    }
+    function stopAd() {
+      vpaidControl.stopAd();
+    }
   </script>
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+  function findGetParameter(parameterName) {
+    var result = null,
+      tmp = [];
+    location.search
+      .substr(1)
+      .split("&")
+      .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+      });
+    return result;
+  }
+
+  function getKeyForValue(array, value, defaultValue) {
+    var result = null;
+    for (key in array) {
+      if (array[key] == value) result = key;
+    }
+
+    return result || defaultValue;
+  }
+
+  function changeTest() {
+    var currentUrl = document.location.href;
+    var indexOfQueryStr = currentUrl.lastIndexOf('?');
+    if (indexOfQueryStr !== -1) {
+      currentUrl = currentUrl.substr(0, indexOfQueryStr);
+    }
+
+    var apikey = document.getElementById("apikey").value;
+
+    document.location.href = currentUrl + "?"
+      + "&apikey=" + apikey
+      + "&rsp_debug=true"
+  }
+
+  var vpaidControl;
+
+  function applyVast() {
+    const RetailSpotConfig = {
+      partnerId: apikey,
+      vast: document.getElementById("vast").value.trim(),
+      width: 320,
+      height: 180,
+      positionSelector: "#target",
+      clickthruEnabled: false,
+      videoLoop: false,
+      replayButton: true,
+      autoplay: false,
+    }
+
+
+
+    var endpoint = document.getElementById("endpoint").value;
+
+    var apikey = findGetParameter("apikey") || "";
+    document.getElementById("apikey").value = apikey;
+
+    var s = document.createElement("script");
+    s.src = endpoint;
+    s.onload = function () {
+      document.getElementById("rsp-version").innerText = window.RetailSpot.version;
+    }
+    document.body.appendChild(s);
+
+
+</script>
 </body>
 
 </html>
