@@ -19,7 +19,7 @@
       </TrackingEvents>
       <AdParameters></AdParameters>
       <VideoClicks>
-       <ClickThrough><![CDATA[https://www.nivea.fr/produits/lait-corps-sous-la-douche-nourrissant-peaux-tres-s%C3%A8ches-40058087520580040.html]]></ClickThrough>
+       <ClickThrough><![CDATA[https://www.intermarche.com/produit/poupee-color-change-marinette/3701405812201]]></ClickThrough>
        <CustomClick><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsClicked&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3185252&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&clickX=[clickX]&clickY=[clickY]&time=[timestamp]&tagsArray=&]]></CustomClick>
       </VideoClicks>
       <MediaFiles>
@@ -30,9 +30,9 @@
    </Creatives>
    <Extensions>
     <Extension type="RSNativeAd">
-      <Title><![CDATA[Miraculous]]></Title>
+      <Title><![CDATA[Poupée "Color Change"]]></Title>
       <Price><![CDATA[24,90 €]]></Price>
-      <Description><![CDATA[Poupée "Color Change" Marinette]]></Description>
+      <Description><![CDATA[Miraculous Poupée Marinette]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[Intermarché]]></Domain>
       <ImageUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/poupee_miraculous.jpg]]></ImageUrl>
