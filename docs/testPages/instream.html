@@ -245,22 +245,18 @@
 
       if (enablePreroll) {
         RetailSpotConfig.preroll = {
-          placement: "eq-609785-1856964-125119",
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
         }
       }
       if (enableMidroll) {
         RetailSpotConfig.midroll = [{
-          startTime: "00:00:10",
-          placement: "eq-609785-1856964-125119",
-        },
-        {
-          startTime: "00:00:20",
-          placement: "eq-609785-1856964-125119",
+          startTime: "00:00:15",
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
         }]
       }
       if (enablePostroll) {
         RetailSpotConfig.postroll = {
-          placement: "eq-609785-1856964-125119",
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
         }
       }
       if (enablePauseAd && !enableCarousel) {
