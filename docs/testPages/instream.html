@@ -167,10 +167,9 @@
       var enableNonLinearAd = document.getElementById("nonlinear").classList.contains('selected');
 
       var enableCarousel = document.getElementById("carouselCheckbox").checked;
-      var endpoint = document.getElementById("endpoint").value;
+      //var endpoint = document.getElementById("endpoint").value;
 
-      document.location.href = currentUrl + "?env=" + endpoint
-        + "&rsp_debug=true"
+      document.location.href = currentUrl + "?rsp_debug=true"
         + "&preroll=" + enablePreroll
         + "&midroll=" + enableMidroll
         + "&postroll=" + enablePostroll
