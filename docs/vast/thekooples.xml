@@ -31,7 +31,8 @@
    <Extensions>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Veste de costume]]></Title>
-      <Description><![CDATA[bleu marine]]></Description>
+      <Description><![CDATA[]]></Description>
+      <Color><![CDATA[bleu marine]]></Color>
       <Price><![CDATA[159,99 €]]></Price>
       <OldPrice><![CDATA[435,00 €]]></OldPrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
@@ -40,7 +41,8 @@
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Veste de costume]]></Title>
-      <Description><![CDATA[100% laine - bleu marine]]></Description>
+      <Description><![CDATA[100% laine]]></Description>
+      <Color><![CDATA[bleu marine]]></Color>
       <Price><![CDATA[119,00 €]]></Price>
       <OldPrice><![CDATA[145,00 €]]></OldPrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
@@ -49,7 +51,7 @@
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Pantalon de costume]]></Title>
-      <Description><![CDATA[bleu marine]]></Description>
+      <Color><![CDATA[bleu marine]]></Color>
       <Price><![CDATA[109,99 €]]></Price>
       <OldPrice><![CDATA[225,00 €]]></OldPrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
@@ -57,8 +59,9 @@
       <ImageUrl><![CDATA[https://media.veepee.com/v1/media/805a7c6e-26cd-44fc-b165-0e84c67ff302?width=200&height=200]]></ImageUrl>
     </Extension>
     <Extension type="RSNativeAd">
-      <Title><![CDATA[Veste de costume - bleu marine]]></Title>
-      <Description><![CDATA[100% laine - bleue]]></Description>
+      <Title><![CDATA[Veste de costume]]></Title>
+      <Description><![CDATA[100% laine]]></Description>
+      <Color><![CDATA[bleue]]></Color>
       <Price><![CDATA[119,99 €]]></Price>
       <OldPrice><![CDATA[145,00 €]]></OldPrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
