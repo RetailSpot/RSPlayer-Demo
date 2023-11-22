@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?><VAST version='2.0'>
+ <Ad id='RetailSpot727435745'>
+  <InLine>
+   <AdSystem>RetailSpot</AdSystem>
+   <AdTitle><![CDATA[73miraculous5745]]></AdTitle>
+   <Description><![CDATA[captureGAEjeremy]]></Description>
+   <Error><![CDATA[https://ads.fake.com/error-tracking/?adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=9297172&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&errorCode=[ERRORCODE]&]]></Error>
+   <Impression id='72743miraculous5745'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsDisplayStarted&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3480005&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&listenerId=7d12dcd3859815be72febc3caa767&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&campaignId=270638385&]]></Impression>
+   <Creatives>
+    <Creative id='72743miraculous5745' sequence='1'>
+     <Linear>
+      <Duration>00:00:38</Duration>
+      <TrackingEvents>
+       <Tracking event='start'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3671101&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=0&time=0&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='firstQuartile'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2249368&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=25&time=5&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='midpoint'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3856841&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=50&time=10&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='thirdQuartile'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2332758&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=75&time=15&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+       <Tracking event='complete'><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsDisplayEnd&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=1182980&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=100&time=20&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
+      </TrackingEvents>
+      <AdParameters></AdParameters>
+      <VideoClicks>
+       <ClickThrough><![CDATA[https://www.intermarche.com/produit/poupee-color-change-marinette/3701405812201]]></ClickThrough>
+       <CustomClick><![CDATA[https://ads.fake.com/www/delivery/swfIndex.php?reqType=AdsClicked&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3185252&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&clickX=[clickX]&clickY=[clickY]&time=[timestamp]&tagsArray=&]]></CustomClick>
+      </VideoClicks>
+      <MediaFiles>
+       <MediaFile delivery='progressive' bitrate='697' width='640' height='360' type='video/mp4' scalable='true' maintainAspectRatio='true'><![CDATA[https://retailspot.github.io/RSPlayer-Demo/videos/caroll.mp4]]></MediaFile>
+      </MediaFiles>
+     </Linear>
+    </Creative>
+   </Creatives>
+   <Extensions>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[Robe droite Malorie]]></Title>
+      <Description><![CDATA[Rouge brique et saumon]]></Description>
+      <Price><![CDATA[35,90 €]]></Price>
+      <OldPrice><![CDATA[110,00 €]]></OldPrice>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[caroll]]></Domain>
+      <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839169_image1_medium.jpg]]></ImageUrl>
+      <ClickUrl><![CDATA[https://www.showroomprive.com/ficheproduit.aspx?produit=28839169]]></ClickUrl>
+    </Extension>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[Robe chemise Camille]]></Title>
+      <Description><![CDATA[Rouge et écru]]></Description>
+      <Price><![CDATA[27,90 €]]></Price>
+      <OldPrice><![CDATA[120,00 €]]></OldPrice>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[caroll]]></Domain>
+      <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839171_image1_medium.jpg]]></ImageUrl>
+      <ClickUrl><![CDATA[https://www.showroomprive.com/ficheproduit.aspx?produit=28839171]]></ClickUrl>
+    </Extension>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[Robe patineuse Joe]]></Title>
+      <Description><![CDATA[Ecru et noir]]></Description>
+      <Price><![CDATA[14509,90 €]]></Price>
+      <OldPrice><![CDATA[110,00 €]]></OldPrice>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[caroll]]></Domain>
+      <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839164_image1_medium.jpg]]></ImageUrl>
+      <ClickUrl><![CDATA[https://www.showroomprive.com/ficheproduit.aspx?produit=28839164]]></ClickUrl>
+    </Extension>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[Robe portefeuille Madelon]]></Title>
+      <Description><![CDATA[Bleu nuit]]></Description>
+      <Color><![CDATA[]]></Color>
+      <Price><![CDATA[53,90 €]]></Price>
+      <OldPrice><![CDATA[130,00 €]]></OldPrice>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[caroll]]></Domain>
+      <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839151_image1_medium.jpg]]></ImageUrl>
+      <ClickUrl><![CDATA[https://www.showroomprive.com/ficheproduit.aspx?produit=28839151]]></ClickUrl>
+    </Extension>
+   </Extensions>
+  </InLine>
+ </Ad>
+</VAST>
