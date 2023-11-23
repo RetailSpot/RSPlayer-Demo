@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Page Vidéo</title>
+  <style>
+    body {
+      color: #c6fff4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #212122;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+      width: 80%;
+    }
+
+    #video-container {
+      position: relative;
+      text-align: center;
+      width: 950px;
+      height: 534px;
+    }
+
+    #video-target {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .settings {
+      padding: 10px;
+      margin-bottom: 40px;
+      width: 80%;
+    }
+
+    .settings-section {
+      padding: 10px;
+      width: 80%;
+    }
+
+    .button {
+      height: 50px;
+      color: gray;
+      background-color: #8ea2af;
+      border: 1px solid gray;
+      display: inline-block;
+      padding: 0px 16px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .fullscreen-button {
+      width: 30px;
+      height: 35px;
+      position: absolute;
+      bottom: 6%;
+      right: 6%;
+      cursor: pointer;
+    }
+
+    .button.selected {
+      color: white;
+      background-color: #3498db;
+      border: 1px solid white;
+    }
+
+    #rsp-version {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">RetailSpot Instream</h1>
+  <div class="settings">
+    <div class="settings-section">
+      <b>RSPlayer version: <span id="rsp-version"></span></b>
+    </div>
+    <!-- <div class="settings-section">
+      <b>Environment:</b>
+      <select id="endpoint">
+        <option value="http://localhost:3000/dist/rsplayer-instream.js"">DEV (localhost:3000/dist/rsplayer-instream.js)</option>
+      <option value="https://static-preprod.retailspotads.com/rsplayer-instream.js"">PREPROD (static-preprod)</option>
+        <option value="https://static.retailspotads.com/rsplayer-instream.js">PROD (static)</option>
+      </select>
+    </div> -->
+    <div class="settings-section">
+      <div class="button" id="preroll">Preroll</div>
+      <div class="button" id="midroll">Midroll</div>
+      <div class="button" id="postroll">Postroll</div>
+      <div class="button" id="nonlinear">Non Linear</div>
+      <div class="button" id="onpause">On Pause</div>
+    </div>
+    <div class="settings-section">
+      <label for="carouselCheckbox">Use Carousel for NonLinear Ads</label>
+      <input type="checkbox" id="carouselCheckbox" name="carouselCheckbox" value="carousel">
+    </div>
+    <button onclick="changeTest()" style="width: 80px; height: 40px; border-radius: 16px;">APPLY ></button>
+    <script>
+      // JavaScript pour gérer les états des boutons
+      const buttons = document.querySelectorAll('.button');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('selected');
+        });
+      });
+    </script>
+  </div>
+
+  <div id="video-container">
+    <video controls id="video-target" muted>
+      <source src="https://retailspot.github.io/RSPlayer-Demo/resources/meilleurspatissiers.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la lecture vidéo.
+    </video>
+    <div class="fullscreen-button" onclick="toggleFullscreen()"></div>
+  </div>
+
+  <script type="text/javascript">
+
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.getElementById("video-container").requestFullscreen();
+      }
+    }
+
+    function findGetParameter(parameterName) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
+    }
+
+
+    function changeTest() {
+      var currentUrl = document.location.href;
+      var indexOfQueryStr = currentUrl.lastIndexOf('?');
+      if (indexOfQueryStr !== -1) {
+        currentUrl = currentUrl.substr(0, indexOfQueryStr);
+      }
+
+      var enablePreroll = document.getElementById("preroll").classList.contains('selected');
+      var enableMidroll = document.getElementById("midroll").classList.contains('selected');
+      var enablePostroll = document.getElementById("postroll").classList.contains('selected');
+      var enablePauseAd = document.getElementById("onpause").classList.contains('selected');
+      var enableNonLinearAd = document.getElementById("nonlinear").classList.contains('selected');
+
+      var enableCarousel = document.getElementById("carouselCheckbox").checked;
+      //var endpoint = document.getElementById("endpoint").value;
+
+      document.location.href = currentUrl + "?rsp_debug=true"
+        + "&preroll=" + enablePreroll
+        + "&midroll=" + enableMidroll
+        + "&postroll=" + enablePostroll
+        + "&onpause=" + enablePauseAd
+        + "&nonlinear=" + enableNonLinearAd
+        + "&carousel=" + enableCarousel
+
+    }
+
+    var enablePreroll = findGetParameter("preroll") === 'true';
+    const funcPre = enablePreroll ? "add" : "remove";
+    document.getElementById("preroll").classList[funcPre]('selected');
+
+    var enableMidroll = findGetParameter("midroll") === 'true';
+    const funcMid = enableMidroll ? "add" : "remove";
+    document.getElementById("midroll").classList[funcMid]('selected');
+
+    var enablePostroll = findGetParameter("postroll") === 'true';
+    const funcPost = enablePostroll ? "add" : "remove";
+    document.getElementById("postroll").classList[funcPost]('selected');
+
+    var enablePauseAd = findGetParameter("onpause") === 'true';
+    const funcPause = enablePauseAd ? "add" : "remove";
+    document.getElementById("onpause").classList[funcPause]('selected');
+
+    var enableNonLinearAd = findGetParameter("nonlinear") === 'true';
+    const funcNonLinear = enableNonLinearAd ? "add" : "remove";
+    document.getElementById("nonlinear").classList[funcNonLinear]('selected');
+
+    var enableCarousel = findGetParameter("carousel") === 'true';
+    document.getElementById("carouselCheckbox").checked = enableCarousel;
+
+    // var endpoint = findGetParameter("env") || "http://localhost:3000/dist/rsplayer.js";
+    // document.getElementById("endpoint").value = endpoint;
+
+
+    var s = document.createElement("script");
+    s.src = "https://static.retailspotads.com/rsplayer-instream.js";
+    s.onload = function () {
+      const RS = window.RetailSpot;
+
+      document.getElementById("rsp-version").innerText = RS.version;
+
+      const nativeTemplate = '<div class="rs-expand" style="overflow:hidden;width:100%;color:#434748;height:100%;max-height:68px;transition:max-height .7s ease;display:flex;flex-direction:column;justify-content:flex-start;background:#fff;box-shadow:rgba(0,0,0,.7) 0 0 20px;border-radius:8px"><div style="display:flex;flex-direction:row;height:68px"><img class="rs-hideonexpand" style="opacity:1;transition:opacity 0.7s ease;width:68px;height:68px;object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/images/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg"><div style="display:flex;flex-direction:column;align-items:center;height:100%;flex-grow:1;justify-content:center"><img src="https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheLogo.png" style="width:130px;height:30px;object-fit:cover"><div style="width:100%;height:30px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div style="height:16px;flex-grow:1;font-size:14px;">Galaxy Z Flip 5G</div><div style="height:16px;font-weight:600;font-size:14px">999 €</div></div></div><div style="height:calc(100% - 16px);padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:space-around"><img src="https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png" style="padding:0 4px 0 0;width:48px;padding:4px;height:48px"></div></div><div style="display:flex;flex-direction:row;flew-grow:1"><img style="width:50%;height:calc(100% - 68px);object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/resources/poupee_miraculous.jpg"> <img style="width:50%;height:calc(100% - 68px);object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png"></div></div>';
+      const nativeTemplateCarousel = '<div style="overflow:hidden;width:100%;color:#434748;height:100%;display:flex;flex-direction:column;justify-content:flex-start;background:#fff;"><div style="display:flex;flex-direction:row;height:68px"><img class="rs-el-img" style="opacity:1;transition:opacity 0.7s ease;width:68px;height:68px;object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/images/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg"><div style="display:flex;flex-direction:column;align-items:center;height:100%;flex-grow:1;justify-content:center"><img src="https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheLogo.png" style="width:130px;height:30px;object-fit:cover"><div style="width:100%;height:30px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div class="rs-el-title" style="height:16px;flex-grow:1;font-size:14px;">Galaxy Z Flip 5G</div><div class="rs-el-price" style="height:16px;font-weight:600;font-size:14px">999 €</div></div></div><div style="height:calc(100% - 16px);padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:space-around"><div class="rs-el-closebutton" style="padding: 0px 8px; font-size: 20px; background: rgba(0, 0, 0, 0); border-radius: 0px 10px 10px 0px; transition: all 0.3s ease 0s; display: flex; flex-direction: column; justify-content: center; opacity: 1;"><span style="align-items: center; display: flex; height: 20px; justify-content: center; width: 20px;">×</span></div></div></div></div>';
+
+      const nativeData = {
+        "title": "Poupée Miraculous",
+        "price": "24,90 €",
+        "desc": "Miraculous Poupée Marinette",
+        "ctatext": "En savoir plus",
+        "domain": "Intermarché",
+        "imageUrl": "https://retailspot.github.io/RSPlayer-Demo/resources/poupee_miraculous.jpg",
+        "clickUrl": "https://www.intermarche.com/",
+      };
+      const nativeData2 = {
+        "title": "Lait corps ",
+        "price": "4,15 €",
+        "desc": "sous la douche",
+        "ctatext": "En savoir plus",
+        "domain": "Intermarché",
+        "imageUrl": "https://www.nocibe.fr/fstrz/r/s/www.nocibe.fr/medias/produits/262414/262414-nivea-lait-nourrissant-huile-d-amande-douce-lait-corps-sous-la-douche-250ml-flacon-1000x1000.jpg?frz-v=5104",
+        "clickUrl": "https://www.intermarche.com/",
+      };
+
+
+      const RetailSpotConfig = {
+        videoElement: document.getElementById("video-target"),
+        positionSelector: "#video-container",
+        partnerId: "349693",
+        hideButtons: 3000,
+      }
+
+      if (enablePreroll) {
+        RetailSpotConfig.preroll = {
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
+        }
+      }
+      if (enableMidroll) {
+        RetailSpotConfig.midroll = [{
+          startTime: "00:00:15",
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
+        }]
+      }
+      if (enablePostroll) {
+        RetailSpotConfig.postroll = {
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
+        }
+      }
+      if (enablePauseAd && !enableCarousel) {
+
+        RetailSpotConfig.pauseroll = {
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
+          format: "slider",
+          videoFit: "cover",
+          borderRadius: '8px',
+          template: nativeTemplate
+        }
+      } else if (enablePauseAd) {
+        RetailSpotConfig.pauseroll = {
+          multiAd: 'slider-carousel',
+          itemWidth: 333,
+          itemHeight: 68,
+          mediatype: 'native',
+          autoroll: 8000,
+          ads: [{
+            nativeData: nativeData,
+            template: nativeTemplateCarousel
+          },
+          {
+            nativeData: nativeData2,
+            template: nativeTemplateCarousel
+          }]
+        }
+      }
+      if (enableNonLinearAd && !enableCarousel) {
+        RetailSpotConfig.nonlinear = {
+          startTime: "00:00:03",
+          maxDuration: 20000,
+          vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/miraculous.xml",
+          format: "slider",
+          videoFit: "cover",
+          borderRadius: '8px',
+          template: nativeTemplate
+        }
+      } else if (enableNonLinearAd) {
+        RetailSpotConfig.nonlinear = {
+          startTime: "00:00:03",
+          maxDuration: 15000,
+          multiAd: 'slider-carousel',
+          itemWidth: 333,
+          itemHeight: 68,
+          shownItems: 2,
+          mediatype: 'native',
+          ads: [{
+            nativeData: nativeData,
+            template: nativeTemplateCarousel
+          },
+          {
+            nativeData: nativeData2,
+            template: nativeTemplateCarousel
+          }]
+        }
+      }
+
+      RS.init(RetailSpotConfig, function (creative) {
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdLoaded!");
+        }, RS.VPAID_EVENTS.AdLoaded);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoStart!");
+        }, RS.VPAID_EVENTS.AdVideoStart);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoFirstQuartile!");
+        }, RS.VPAID_EVENTS.AdVideoFirstQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoMidpoint!");
+        }, RS.VPAID_EVENTS.AdVideoMidpoint);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoThirdQuartile!");
+        }, RS.VPAID_EVENTS.AdVideoThirdQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoComplete!");
+        }, RS.VPAID_EVENTS.AdVideoComplete);
+      });
+    }
+    document.body.appendChild(s);
+  </script>
+</body>
+
+</html>
