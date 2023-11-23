@@ -226,6 +226,15 @@
         "clickUrl": "https://www.intermarche.com/",
       };
       const nativeData2 = {
+        "title": "Farine de blé T45 750g",
+        "price": "1.55 €",
+        "desc": "nouveau pack tous usages",
+        "ctatext": "En savoir plus",
+        "domain": "Intermarché",
+        "imageUrl": "https://cdn.intermarche.com/fr/Content/images/boitmal/produit/zoom/BC42F023BB6500A80722B2A0356702E3.jpg",
+        "clickUrl": "https://www.intermarche.com/",
+      };
+      const nativeData3 = {
         "title": "Lait corps ",
         "price": "4,15 €",
         "desc": "sous la douche",
@@ -234,7 +243,6 @@
         "imageUrl": "https://www.nocibe.fr/fstrz/r/s/www.nocibe.fr/medias/produits/262414/262414-nivea-lait-nourrissant-huile-d-amande-douce-lait-corps-sous-la-douche-250ml-flacon-1000x1000.jpg?frz-v=5104",
         "clickUrl": "https://www.intermarche.com/",
       };
-
 
       const RetailSpotConfig = {
         videoElement: document.getElementById("video-target"),
@@ -282,6 +290,10 @@
           {
             nativeData: nativeData2,
             template: nativeTemplateCarousel
+          },
+          {
+            nativeData: nativeData3,
+            template: nativeTemplateCarousel
           }]
         }
       }
@@ -304,14 +316,19 @@
           itemHeight: 68,
           shownItems: 2,
           mediatype: 'native',
-          ads: [{
-            nativeData: nativeData,
-            template: nativeTemplateCarousel
-          },
-          {
-            nativeData: nativeData2,
-            template: nativeTemplateCarousel
-          }]
+          ads: [
+            {
+              nativeData: nativeData2,
+              template: nativeTemplateCarousel
+            },
+            {
+              nativeData: nativeData3,
+              template: nativeTemplateCarousel
+            },
+            {
+              nativeData: nativeData,
+              template: nativeTemplateCarousel
+            }]
         }
       }
 
