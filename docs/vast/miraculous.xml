@@ -39,6 +39,7 @@
       <BrandLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheLogo.png]]></BrandLogoUrl>
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
+      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
     </Extension>
    </Extensions>
   </InLine>
