@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailSport Instream: Slider format</title>
+  <style>
+    body {
+      color: #c6fff4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #212122;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+      width: 80%;
+    }
+
+    #video-container {
+      position: relative;
+      text-align: center;
+      width: 950px;
+      height: 534px;
+    }
+
+    #video-target {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .settings {
+      padding: 10px;
+      margin-bottom: 40px;
+      width: 80%;
+    }
+
+    .settings-section {
+      padding: 10px;
+      width: 80%;
+    }
+
+    .button {
+      height: 50px;
+      color: gray;
+      background-color: #8ea2af;
+      border: 1px solid gray;
+      display: inline-block;
+      padding: 0px 16px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .fullscreen-button {
+      width: 30px;
+      height: 35px;
+      position: absolute;
+      bottom: 6%;
+      right: 6%;
+      cursor: pointer;
+    }
+
+    .button.selected {
+      color: white;
+      background-color: #3498db;
+      border: 1px solid white;
+    }
+
+    #rsp-version {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">RetailSpot Instream: Slider format</h1>
+  <div class="settings">
+    <div class="settings-section">
+      <b>RSPlayer version: <span id="rsp-version"></span></b>
+    </div>
+    <p>The following player shows some ads in <b>slider</b> format. <b>On pause</b> and in a <b>non-linear slot</b> at
+      30&nbsp;seconds and 1&nbsp;minute.</p>
+  </div>
+
+  <div id="video-container">
+    <video controls id="video-target" muted>
+      <source src="https://retailspot.github.io/RSPlayer-Demo/resources/umbrella.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la lecture vidéo.
+    </video>
+    <div class="fullscreen-button" onclick="toggleFullscreen()"></div>
+  </div>
+
+  <script type="text/javascript">
+
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.getElementById("video-container").requestFullscreen();
+      }
+    }
+
+    function findGetParameter(parameterName) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
+    }
+
+    var env = findGetParameter("env") || "";
+    if (env) {
+      env = "-" + env;
+    }
+    scriptSrc = "https://static" + env + ".retailspotads.com/rsplayer-instream.js";
+
+
+    var s = document.createElement("script");
+    s.src = scriptSrc;
+    s.onload = function () {
+
+      document.getElementById("rsp-version").innerText = window.RetailSpot.version;
+
+
+      const RetailSpotConfig = {
+        videoElement: document.getElementById("video-target"),
+        positionSelector: "#video-container",
+        nonlinear: {
+          placement: "eq-609785-1856964-125119",
+          // non linear during ending
+          startTime: "00:07:22",
+          // allow to cover all player
+          allowWidth: "100%",
+          allowHeight: "100%",
+          width: "100%",
+          height: "100%",
+          // show player miniature
+          skipMiniature: true,
+        },
+        pauseroll: {
+          placement: "eq-609785-1856964-125119",
+          // allow to cover all player
+          allowWidth: "100%",
+          allowHeight: "100%",
+          width: "100%",
+          height: "100%",
+          // show player miniature
+          skipMiniature: true,
+          // wait 5 seconds before showing the on pause ad
+          pauserollDelay: 5000,
+        }
+      }
+
+
+      window.RetailSpot.init(RetailSpotConfig, function (creative) {
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdLoaded!");
+        }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoStart!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoStart);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoFirstQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoFirstQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoMidpoint!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoMidpoint);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoThirdQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoThirdQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoComplete!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoComplete);
+      });
+    }
+    document.body.appendChild(s);
+  </script>
+</body>
+
+</html>
