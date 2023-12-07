@@ -33,7 +33,7 @@
       <Title><![CDATA[Robe droite Malorie]]></Title>
       <Description><![CDATA[Rouge brique et saumon]]></Description>
       <Price><![CDATA[35,90 €]]></Price>
-      <OldPrice><![CDATA[110,00 €]]></OldPrice>
+      <SalePrice><![CDATA[110,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[caroll]]></Domain>
       <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839169_image1_medium.jpg]]></ImageUrl>
@@ -43,7 +43,7 @@
       <Title><![CDATA[Robe chemise Camille]]></Title>
       <Description><![CDATA[Rouge et écru]]></Description>
       <Price><![CDATA[27,90 €]]></Price>
-      <OldPrice><![CDATA[120,00 €]]></OldPrice>
+      <SalePrice><![CDATA[120,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[caroll]]></Domain>
       <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839171_image1_medium.jpg]]></ImageUrl>
@@ -53,7 +53,7 @@
       <Title><![CDATA[Robe patineuse Joe]]></Title>
       <Description><![CDATA[Ecru et noir]]></Description>
       <Price><![CDATA[45,90 €]]></Price>
-      <OldPrice><![CDATA[110,00 €]]></OldPrice>
+      <SalePrice><![CDATA[110,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[caroll]]></Domain>
       <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839164_image1_medium.jpg]]></ImageUrl>
@@ -62,9 +62,9 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Robe portefeuille Madelon]]></Title>
       <Description><![CDATA[Bleu nuit]]></Description>
-      <Color><![CDATA[]]></Color>
+      <Desc2><![CDATA[]]></Desc2>
       <Price><![CDATA[53,90 €]]></Price>
-      <OldPrice><![CDATA[130,00 €]]></OldPrice>
+      <SalePrice><![CDATA[130,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[caroll]]></Domain>
       <ImageUrl><![CDATA[//cedex.it.showroomprive.com/v2/images_content_split/121341/products_28839151_image1_medium.jpg]]></ImageUrl>

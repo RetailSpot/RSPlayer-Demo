@@ -32,7 +32,7 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Lait corps sous la douche]]></Title>
       <Price><![CDATA[4,00 €]]></Price>
-      <OldPrice><![CDATA[4,15 €]]></OldPrice>
+      <SalePrice><![CDATA[4,15 €]]></SalePrice>
       <Description><![CDATA[Nourrissant pour peaux trés sèches]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[nivea.com]]></Domain>
@@ -43,7 +43,7 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Lait douceur hydratant]]></Title>
       <Price><![CDATA[2,00 €]]></Price>
-      <OldPrice><![CDATA[2,89 €]]></OldPrice>
+      <SalePrice><![CDATA[2,89 €]]></SalePrice>
       <Description><![CDATA[peaux sèches Body NIVEA, flacon de 250ml]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[nivea.com]]></Domain>
@@ -54,7 +54,7 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Lait réparateur pour le corps]]></Title>
       <Price><![CDATA[2,19 €]]></Price>
-      <OldPrice><![CDATA[2,89 €]]></OldPrice>
+      <SalePrice><![CDATA[2,89 €]]></SalePrice>
       <Description><![CDATA[peaux extra-sèches Body NIVEA, flacon de 250ml]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[nivea.com]]></Domain>
@@ -65,7 +65,7 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Lait fluide hydratant]]></Title>
       <Price><![CDATA[2,00 €]]></Price>
-      <OldPrice><![CDATA[2,89 €]]></OldPrice>
+      <SalePrice><![CDATA[2,89 €]]></SalePrice>
       <Description><![CDATA[peaux normales à sèches Body NIVEA, flaconde 250ml]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[nivea.com]]></Domain>

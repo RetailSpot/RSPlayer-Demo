@@ -32,9 +32,9 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Veste de costume]]></Title>
       <Description><![CDATA[]]></Description>
-      <Color><![CDATA[bleu marine]]></Color>
+      <Desc2><![CDATA[bleu marine]]></Desc2>
       <Price><![CDATA[159,99 €]]></Price>
-      <OldPrice><![CDATA[435,00 €]]></OldPrice>
+      <SalePrice><![CDATA[435,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[thekooples]]></Domain>
       <ImageUrl><![CDATA[https://media.veepee.com/v1/media/6d89769c-6994-4793-8e3b-d353d3561ce2?width=200&height=200]]></ImageUrl>
@@ -42,18 +42,18 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Veste de costume]]></Title>
       <Description><![CDATA[100% laine]]></Description>
-      <Color><![CDATA[bleu marine]]></Color>
+      <Desc2><![CDATA[bleu marine]]></Desc2>
       <Price><![CDATA[119,00 €]]></Price>
-      <OldPrice><![CDATA[145,00 €]]></OldPrice>
+      <SalePrice><![CDATA[145,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[thekooples]]></Domain>
       <ImageUrl><![CDATA[https://media.veepee.com/v1/media/bc026f99-1f66-49f0-aaec-992c24e2a129?width=200&height=200]]></ImageUrl>
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Pantalon de costume]]></Title>
-      <Color><![CDATA[bleu marine]]></Color>
+      <Desc2><![CDATA[bleu marine]]></Desc2>
       <Price><![CDATA[109,99 €]]></Price>
-      <OldPrice><![CDATA[225,00 €]]></OldPrice>
+      <SalePrice><![CDATA[225,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[thekooples]]></Domain>
       <ImageUrl><![CDATA[https://media.veepee.com/v1/media/805a7c6e-26cd-44fc-b165-0e84c67ff302?width=200&height=200]]></ImageUrl>
@@ -61,9 +61,9 @@
     <Extension type="RSNativeAd">
       <Title><![CDATA[Veste de costume]]></Title>
       <Description><![CDATA[100% laine]]></Description>
-      <Color><![CDATA[bleue]]></Color>
+      <Desc2><![CDATA[bleue]]></Desc2>
       <Price><![CDATA[119,99 €]]></Price>
-      <OldPrice><![CDATA[145,00 €]]></OldPrice>
+      <SalePrice><![CDATA[145,00 €]]></SalePrice>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[thekooples]]></Domain>
       <ImageUrl><![CDATA[https://media.veepee.com/v1/media/830469d2-b66f-4af7-a498-69119e0d14e3?width=200&height=200]]></ImageUrl>
