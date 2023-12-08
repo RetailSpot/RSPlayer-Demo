@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailSport Instream: Slider format with Native</title>
+  <style>
+    body {
+      color: #c6fff4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #212122;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+      width: 80%;
+    }
+
+    #video-container {
+      position: relative;
+      text-align: center;
+      width: 950px;
+      height: 534px;
+    }
+
+    #video-target {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .settings {
+      padding: 10px;
+      margin-bottom: 40px;
+      width: 80%;
+    }
+
+    .settings-section {
+      padding: 10px;
+      width: 80%;
+    }
+
+    .button {
+      height: 50px;
+      color: gray;
+      background-color: #8ea2af;
+      border: 1px solid gray;
+      display: inline-block;
+      padding: 0px 16px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .fullscreen-button {
+      width: 30px;
+      height: 35px;
+      position: absolute;
+      bottom: 6%;
+      right: 6%;
+      cursor: pointer;
+    }
+
+    .button.selected {
+      color: white;
+      background-color: #3498db;
+      border: 1px solid white;
+    }
+
+    #rsp-version {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">RetailSpot Instream: Slider format with native assets.</h1>
+  <div class="settings">
+    <div class="settings-section">
+      <b>RSPlayer version: <span id="rsp-version"></span></b>
+    </div>
+    <p>The following player shows some ads in <b>slider</b> format with native assets. <br /><b>On pause</b> and in a
+      <b>non-linear slot</b> at
+      1&nbsp;minute and during ending (7min22s).
+    </p>
+  </div>
+
+  <div id="video-container">
+    <video controls id="video-target" muted>
+      <source src="https://retailspot.github.io/RSPlayer-Demo/resources/umbrella.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la lecture vidéo.
+    </video>
+    <div class="fullscreen-button" onclick="toggleFullscreen()"></div>
+  </div>
+
+  <script type="text/javascript">
+
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.getElementById("video-container").requestFullscreen();
+      }
+    }
+
+    function findGetParameter(parameterName) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
+    }
+
+    var env = findGetParameter("env") || "";
+    if (env) {
+      env = "-" + env;
+    }
+    scriptSrc = "https://static" + env + ".retailspotads.com/rsplayer-instream.js";
+
+
+    var s = document.createElement("script");
+    s.src = scriptSrc;
+    s.onload = function () {
+
+      document.getElementById("rsp-version").innerText = window.RetailSpot.version;
+
+      const nativeTemplate = '<div class="rs-expand" style="overflow:hidden;width:100%;color:#434748;height:100%;max-height:68px;transition:max-height .7s ease;display:flex;flex-direction:column;justify-content:flex-start;background:#fff;box-shadow:rgba(0,0,0,.7) 0 0 20px;"><div style="display:flex;flex-direction:row;height:68px"><img class="rs-hideonexpand rs-el-img" style="opacity:1;transition:opacity 0.7s ease;width:68px;height:68px;object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/images/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg"><div style="display:flex;flex-direction:column;align-items:center;height:100%;flex-grow:1;justify-content:center"><img class="rs-el-brandlogo" src="" style="width:140px;height:30px;object-fit:cover"><div style="width:100%;height:30px;display:flex;flex-direction:row;justify-content:space-between;align-items:center"><div class="rs-el-title" style="height:16px;flex-grow:1;font-size:14px;">Galaxy Z Flip 5G</div><div class="rs-el-price" style="height:16px;font-weight:600;font-size:14px">999 €</div></div></div><div style="height:calc(100% - 16px);padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:space-around"><img class="rs-el-cartlogo" src="" style="padding:0 4px 0 0;width:48px;padding:4px;height:48px"></div></div><div style="display:flex;flex-direction:row;flew-grow:1"><img class="rs-el-img" style="width:50%;height:calc(100% - 68px);object-fit:contain" src="https://retailspot.github.io/RSPlayer-Demo/images/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg"> <img style="width:50%;height:calc(100% - 68px);object-fit:contain" class="rs-el-qrcode" src=""></div></div>';
+
+      const RetailSpotConfig = {
+        videoElement: document.getElementById("video-target"),
+        positionSelector: "#video-container",
+        // add a native template to display native ad if any present in the VAST
+        // the same template will be used for every ad slot below.
+        template: nativeTemplate,
+        nonlinear: [,
+          {
+            placement: "eq-609785-1856964-127825",
+            format: "slider",
+            // this non linear will be shown after one minute playin
+            startTime: "00:01:00",
+            templateMargin: 16,
+          },
+          {
+            placement: "eq-609785-1856964-127825",
+            format: "slider",
+            // this non linear will be shown at 50 percent of video content 
+            startTime: "50%",
+          }, {
+            placement: "eq-609785-1856964-127825",
+            format: "slider",
+            // non linear during ending
+            startTime: "00:07:22",
+            // wait 5 seconds before showing the on pause ad
+            pauserollDelay: 5000,
+          }],
+        pauseroll: {
+          placement: "eq-609785-1856964-127825",
+          format: "slider",
+          // wait 5 seconds before showing the ad on pause
+          pauserollDelay: 5000,
+          // set the native template to be shown at the bottom of video ad
+          templatePosition: "bottom",
+          // leave space under the video to show the native ad
+          vmargin: 120,
+          hideOnStop: false,
+        }
+      }
+
+
+      window.RetailSpot.init(RetailSpotConfig, function (creative) {
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdLoaded!");
+        }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoStart!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoStart);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoFirstQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoFirstQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoMidpoint!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoMidpoint);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoThirdQuartile!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoThirdQuartile);
+
+        creative.subscribe(function () {
+          console.log("RSPlayer: AdVideoComplete!");
+        }, window.RetailSpot.VPAID_EVENTS.AdVideoComplete);
+      });
+    }
+    document.body.appendChild(s);
+  </script>
+</body>
+
+</html>
