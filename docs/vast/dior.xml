@@ -9,7 +9,7 @@
    <Creatives>
     <Creative id='727435745' sequence='1'>
      <Linear>
-      <Duration>00:00:20</Duration>
+      <Duration>00:00:15</Duration>
       <TrackingEvents>
        <Tracking event='start'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3671101&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=0&time=0&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
        <Tracking event='firstQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2249368&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=25&time=5&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
@@ -28,7 +28,41 @@
      </Linear>
     </Creative>
    </Creatives>
-   <Extensions></Extensions>
+   <Extensions>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[J'ADORE]]></Title>
+      <Price><![CDATA[77,99 €]]></Price>
+      <Description><![CDATA[Eau de Parfum Vaporisateur]]></Description>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[DIOR]]></Domain>
+      <ImageUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/images/dior1.jpg]]></ImageUrl>
+      <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
+      <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
+      <clickUrl><![CDATA[https://www.marionnaud.fr/parfum/parfum-femme/produit-complementaire/j-adore-lait-sublime-dior/p/101775091]]></clickUrl>
+    </Extension>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[J'ADORE]]></Title>
+      <Price><![CDATA[127,99 €]]></Price>
+      <Description><![CDATA[Eau de parfum Infinissime]]></Description>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[DIOR]]></Domain>
+      <ImageUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/images/dior2.jpg]]></ImageUrl>
+      <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
+      <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
+      <clickUrl><![CDATA[https://www.marionnaud.fr/parfum/parfum-femme/produit-complementaire/j-adore-lait-sublime-dior/p/101775091]]></clickUrl>
+    </Extension>
+    <Extension type="RSNativeAd">
+      <Title><![CDATA[J'ADORE]]></Title>
+      <Price><![CDATA[77,99 €]]></Price>
+      <Description><![CDATA[Lait sublime]]></Description>
+      <CtaText><![CDATA[En savoir plus]]></CtaText>
+      <Domain><![CDATA[DIOR]]></Domain>
+      <ImageUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/images/dior3.jpg]]></ImageUrl>
+      <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
+      <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
+      <clickUrl><![CDATA[https://www.marionnaud.fr/parfum/parfum-femme/produit-complementaire/j-adore-lait-sublime-dior/p/101775091]]></clickUrl>
+    </Extension>
+   </Extensions>
   </InLine>
  </Ad>
 </VAST>
