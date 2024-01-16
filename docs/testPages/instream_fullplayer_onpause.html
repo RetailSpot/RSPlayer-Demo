@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RetailSport Instream: Slider format</title>
+  <title>RetailSport Instream: onPause</title>
   <style>
     body {
       color: #c6fff4;
@@ -88,7 +88,7 @@
 </head>
 
 <body>
-  <h1 id="title">RetailSpot Instream: Slider format</h1>
+  <h1 id="title">RetailSpot Instream: onPause</h1>
   <div class="settings">
     <div class="settings-section">
       <b>RSPlayer version: <span id="rsp-version"></span></b>
@@ -159,15 +159,12 @@
         },
         pauseroll: {
           placement: "eq-609785-1856964-125119",
-          // allow to cover all player
-          allowWidth: "100%",
-          allowHeight: "100%",
-          width: "100%",
-          height: "100%",
+          format: "slider",
           // show player miniature
-          skipMiniature: true,
+          skipMiniature: false,
+          skipDelay: 2000,
           // wait 5 seconds before showing the on pause ad
-          pauserollDelay: 5000,
+          pauserollDelay: 1000,
         }
       }
 
