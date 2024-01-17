@@ -22,21 +22,22 @@
       max-width: 275px;
     }
 
-
     #videoContainer {
-      width: 500px;
-      height: 280px;
+      width: 100%;
+      height: 350px;
+      padding: 25px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
+      background-color: darkgray;
     }
 
     #target {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: relative;
+      margin: auto;
+      top: 25px;
+      width: 769px;
+      height: 300px;
     }
   </style>
   <script type="text/javascript" src="https://static.retailspotads.com/rsplayer.js"></script>
@@ -48,7 +49,7 @@
     <img id="logo"
       src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
       alt="Logo">
-    <h1>Oustream simple example</h1>
+    <h1>Oustream video/native side by side </h1>
   </div>
 
   <div id="videoContainer">
@@ -57,10 +58,12 @@
 
   <script>
     const RetailSpotConfig = {
-      placement: 'eq-609785-1856964-125119',
-      width: '100%',
-      height: '100%',
-      positionSelector: "#target"
+      placement: 'eq-609785-1856964-125234',
+      width: 769,
+      height: 300,
+      videoLoop: true,
+      positionSelector: "#target",
+      template: '<div style="border: solid 3px #004195;width:326px;height:500px;background:#fff;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;padding:10px;box-sizing:border-box;font-family:sans-serif;"><img class="rs-el-img" style="width:200px;height:160px;object-fit:contain;margin-bottom:10px;"><div class="rs-el-title" style="max-height: 50px;font-size:14px;font-weight:bold;color:#004196;text-align:left;margin: 0 0 5px 20px;"></div><div class="rs-el-description" style="font-size:14px;text-align:left;margin: 0 20px 10px 20px;"></div><div class="rs-el-price" style="color:#004196;font-size:23px;font-weight:600;text-align:left;margin: 0 20px 10px 20px;flex-grow:1;"></div></div>'
     }
 
     window.RetailSpot.init(RetailSpotConfig, function (creative) {
