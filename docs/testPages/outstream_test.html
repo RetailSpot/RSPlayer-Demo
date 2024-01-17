@@ -172,7 +172,7 @@
 				width: 320,
 				height: 180,
 				videoFit: "cover",
-				positionSelector: ".fake-text", // ignored by slider ad format
+				positionSelector: adformat === 'intext' ? ".fake-text" : undefined,
 				format: adformat,
 				//align: "left", // default is bottom right
 				//vmargin: 50, // default is 30
