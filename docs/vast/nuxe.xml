@@ -40,7 +40,7 @@
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
       <clickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-or-100ml-3264680009778]]></clickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
-      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcherCart.png]]></CartLogoUrl>
+      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Huile Prodigieuse® Florale]]></Title>
@@ -53,7 +53,7 @@
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
       <clickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-florale-100ml-gelee-de-douche-prodigieux-floral-30ml-3264680037009]]></clickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
-      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcherCart.png]]></CartLogoUrl>
+      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Huile prodigieuse riche]]></Title>
@@ -66,7 +66,7 @@
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
       <clickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-riche-100ml-3264680009808]]></clickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
-      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcherCart.png]]></CartLogoUrl>
+      <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
     </Extension>
    </Extensions>
   </InLine>
