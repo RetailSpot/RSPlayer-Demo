@@ -45,15 +45,15 @@
         <Shop>
           <Key><![CDATA[marionnaud]]></Key>
           <ClickThrough><![CDATA[https://www.marionnaud.fr/marques/b/nuxe/100447]]></ClickThrough>
-        <Shop>
+        </Shop>
         <Shop>
           <Key><![CDATA[nocibe]]></Key>
           <ClickThrough><![CDATA[https://www.nocibe.fr/resultats/nuxe?q=nuxe]]></ClickThrough>
-        <Shop>
+        </Shop>
         <Shop>
           <Key><![CDATA[sephora]]></Key>
           <ClickThrough><![CDATA[https://www.sephora.fr/p/huile-prodigieuse---huile-seche-multi-fonctions-visage--corps--cheveux-369057.html]]></ClickThrough>
-        <Shop>
+        </Shop>
       </Shops>
     </Extension>
     <Extension type="RSNativeAd">
