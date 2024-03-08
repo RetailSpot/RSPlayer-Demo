@@ -41,6 +41,7 @@
       <ClickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-or-100ml-3264680009778]]></ClickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
       <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
+      <Rating>4</Rating>
       <Shops>
         <Shop>
           <Key><![CDATA[marionnaud]]></Key>
