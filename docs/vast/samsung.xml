@@ -37,7 +37,7 @@
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[samsung.com]]></Domain>
       <ImageUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/images/Smartphone-Samsung-Galaxy-Z-Flip4-6-7-Nano-SIM-5G-128-Go-Or-Rose.jpg]]></ImageUrl>
-      <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
+      <BrandLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/samsung.png]]></BrandLogoUrl>
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
     </Extension>
    </Extensions>
