@@ -31,13 +31,20 @@
    <Extensions>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Farine de blé T45 750g]]></Title>
-      <Price><![CDATA[1.55 €]]></Price>
+      <Price><![CDATA[1.72 €]]></Price>
       <Description><![CDATA[Nouveau pack tous usages]]></Description>
       <CtaText><![CDATA[En savoir plus]]></CtaText>
       <Domain><![CDATA[Intermarché]]></Domain>
       <ImageUrl><![CDATA[https://cdn.intermarche.com/fr/Content/images/boitmal/produit/zoom/BC42F023BB6500A80722B2A0356702E3.jpg]]></ImageUrl>
       <BrandLogoUrl><![CDATA[]]></BrandLogoUrl>
       <SponsoredLabel><![CDATA[Sponsorisé]]></SponsoredLabel>
+      <Shops>
+        <Shop>
+          <Key><![CDATA[intermarche]]></Key>
+          <ClickThrough><![CDATA[https://www.intermarche.com/produit/ma-farine-de-ble-tous-usages-t45/3162780362031]]></ClickThrough>
+          <AddToCart><![CDATA[12345678]]></AddToCart>
+        </Shop>
+      </Shops>
     </Extension>
    </Extensions>
   </InLine>
