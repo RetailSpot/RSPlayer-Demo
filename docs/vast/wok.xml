@@ -9,7 +9,7 @@
    <Creatives>
     <Creative id='727435745' sequence='1'>
      <Linear>
-      <Duration>00:00:8</Duration>
+      <Duration>00:00:08</Duration>
       <TrackingEvents>
        <Tracking event='start'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=3671101&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=0&time=0&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
        <Tracking event='firstQuartile'><![CDATA[https://ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=AdsSendReport&adId=727435745&viewKey=1671289617309063-550&sessionId=1671289617309064-550&zoneId=2003&impId=1&cb=2249368&trackingIds=28161297%2C28161329%2C29847601%2C29967745%2C61392385%2C98035954&supportsFlash=false&supportsJavascript=true&componentId=vpaid-adapter&ibpiv=bec9953fa921f065434b0164b446a763&displayPercentage=25&time=5&tagsArray=&ibp=4cbaab27de126ee3b259252391f2c3cdaa0c3fee22ba41fb5ac611143a5f38ce10c432bc221cc02f8575018ffd7fa53c&]]></Tracking>
