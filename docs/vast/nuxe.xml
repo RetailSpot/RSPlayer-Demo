@@ -69,6 +69,20 @@
       <ClickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-florale-100ml-gelee-de-douche-prodigieux-floral-30ml-3264680037009]]></ClickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
       <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
+      <Shops>
+        <Shop>
+          <Key><![CDATA[marionnaud]]></Key>
+          <ClickThrough><![CDATA[https://www.marionnaud.fr/marques/b/nuxe/100447]]></ClickThrough>
+        </Shop>
+        <Shop>
+          <Key><![CDATA[nocibe]]></Key>
+          <ClickThrough><![CDATA[https://www.nocibe.fr/resultats/nuxe?q=nuxe]]></ClickThrough>
+        </Shop>
+        <Shop>
+          <Key><![CDATA[sephora]]></Key>
+          <ClickThrough><![CDATA[https://www.sephora.fr/p/huile-prodigieuse---huile-seche-multi-fonctions-visage--corps--cheveux-369057.html]]></ClickThrough>
+        </Shop>
+      </Shops>
     </Extension>
     <Extension type="RSNativeAd">
       <Title><![CDATA[Huile prodigieuse riche]]></Title>
@@ -82,6 +96,20 @@
       <ClickUrl><![CDATA[https://www.e.leclerc/fp/huile-prodigieuse-riche-100ml-3264680009808]]></ClickUrl>
       <QrCodeUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcher-qr.png]]></QrCodeUrl>
       <CartLogoUrl><![CDATA[https://retailspot.github.io/RSPlayer-Demo/resources/intermarcheCart.png]]></CartLogoUrl>
+      <Shops>
+        <Shop>
+          <Key><![CDATA[marionnaud]]></Key>
+          <ClickThrough><![CDATA[https://www.marionnaud.fr/marques/b/nuxe/100447]]></ClickThrough>
+        </Shop>
+        <Shop>
+          <Key><![CDATA[nocibe]]></Key>
+          <ClickThrough><![CDATA[https://www.nocibe.fr/resultats/nuxe?q=nuxe]]></ClickThrough>
+        </Shop>
+        <Shop>
+          <Key><![CDATA[sephora]]></Key>
+          <ClickThrough><![CDATA[https://www.sephora.fr/p/huile-prodigieuse---huile-seche-multi-fonctions-visage--corps--cheveux-369057.html]]></ClickThrough>
+        </Shop>
+      </Shops>
     </Extension>
    </Extensions>
   </InLine>
