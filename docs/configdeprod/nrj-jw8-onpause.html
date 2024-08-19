@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link id="favicon" rel="shortcut icon" href="https://files.readme.io/30bb71e-10a8bad-favicon.ico"
+        type="image/x-icon" class="badge-init" data-href="https://files.readme.io/30bb71e-10a8bad-favicon.ico">
+    <script src='../demo/jwplayer/lib/jw-8.24.3/jwplayer.js'></script>
+
+    <style type="text/css">
+        body {
+            font-family: arial;
+        }
+
+        .setting {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="setting">
+            <b>Env:</b>
+            <select id="env-select">
+                <option value="prod">Prod</option>
+                <option value="preprod">Preprod</option>
+            </select>
+        </div>
+        <div class="setting">
+            <button onclick="changeTest()">APPLY</button>
+        </div>
+    </div>
+    <div id="player">Loading the player...</div>
+    <script>
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                    tmp = item.split("=");
+                    if (tmp[0].toLowerCase() === parameterName.toLowerCase()) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+
+        function changeTest() {
+            var currentUrl = document.location.href;
+            var indexOfQueryStr = currentUrl.lastIndexOf('?');
+            if (indexOfQueryStr !== -1) {
+                currentUrl = currentUrl.substr(0, indexOfQueryStr);
+            }
+
+            var env = document.getElementById("env-select").value;
+
+            document.location.href = currentUrl + "?env=" + env
+        }
+
+        var env = findGetParameter("env") || "prod";
+        document.getElementById("env-select").value = env;
+
+        var endpoint = "//static.retailspotads.com/rsplayer-jwplugin.js";
+        if (findGetParameter("env") === "preprod") {
+            endpoint = "//static-preprod.retailspotads.com/rsplayer-jwplugin.js";
+        }
+
+        const plugins = [];
+        plugins[endpoint] = {
+            "pauseroll": {
+                placement: ['eq-609785-1856964-125119', 'eq-609785-1856964-127825'],
+                format: "slider",
+                skipMessage: "Fermer",
+                width: 320,
+                height: 240,
+                rerunDelay: 5000,
+                muted: true,
+                fullscreen: {
+                    width: 400,
+                    height: 300,
+                    vmargin: 150,
+                    hmargin: 150,
+                },
+                mobile: {
+                    width: 220,
+                }
+            }
+        }
+        // Setup the player
+        const player = jwplayer('player').setup({
+            width: 780,
+            height: 438,
+            file: 'https://retailspot.github.io/RSPlayer-Demo/resources/umbrella.mp4',
+            plugins: plugins
+        });
+
+
+    </script>
+</body>
+
+</html>
