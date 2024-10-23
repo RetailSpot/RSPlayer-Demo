@@ -68,7 +68,7 @@
         const plugins = [];
         plugins[endpoint] = {
             "pauseroll": {
-                placement: ['eq-609785-1856964-125119', 'eq-609785-1856964-127825'],
+                placement: ['eq-673514-2010768-133777', 'eq-673514-2010768-133778'],
                 partnerId: '533149',
                 format: 'slider',
                 skipMessage: 'Fermer',
@@ -83,14 +83,17 @@
                     hmargin: 150,
                 },
                 mobile: {
-                    width: 220,
+                    width: 320,
+                    height: 240,
+                    vmargin: 70,
+                    hmargin: 70,
                 }
             }
         }
         // Setup the player
         const player = jwplayer('player').setup({
-            width: 780,
-            height: 438,
+            width: 580,
+            height: 326,
             file: 'https://retailspot.github.io/RSPlayer-Demo/resources/umbrella.mp4',
             plugins: plugins
         });
