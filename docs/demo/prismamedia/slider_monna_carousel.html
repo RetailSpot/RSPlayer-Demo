@@ -42,11 +42,10 @@
 			position: relative;
 			padding-left: 20px;
 			margin: auto;
-			width: 600px;
+			width: 80%;
 			background-color: white
 		}
 	</style>
-	<script type="text/javascript" src="https://static.retailspotads.com/rsplayer.js"></script>
 </head>
 
 <body>
@@ -93,7 +92,11 @@ s.onload = function () {
 		}
 	}
 
-	RS.init(RetailSpotConfig);
+	RS.init(RetailSpotConfig, (ad) => {
+		if (ad.subscribe){
+			ad.subscribe(RS.VPAID_EVENT.AdClickThru, () => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;));
+		}
+	});
 }
 document.body.appendChild(s);
 				</code>
@@ -146,7 +149,11 @@ document.body.appendChild(s);
 				}
 			}
 
-			RS.init(RetailSpotConfig);
+			RS.init(RetailSpotConfig, (ad) => {
+				if (ad.subscribe) {
+					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
+				}
+			});
 		}
 		document.body.appendChild(s);
 	</script>
