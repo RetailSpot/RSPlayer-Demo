@@ -94,7 +94,7 @@ s.onload = function () {
 
 	RS.init(RetailSpotConfig, (ad) => {
 		if (ad.subscribe){
-			ad.subscribe(RS.VPAID_EVENT.AdClickThru, () => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;));
+			ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
 		}
 	});
 }
