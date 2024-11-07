@@ -95,8 +95,7 @@ s.onload = function () {
 	RS.init(RetailSpotConfig, (ad) => {
 		if (ad && ad.subscribe){
 			ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-		} else {
-			RS.tools.GAMNoAdCallback('Footer-web');
+			ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
 		}
 	});
 }
@@ -155,8 +154,7 @@ document.body.appendChild(s);
 			RS.init(RetailSpotConfig, (ad) => {
 				if (ad && ad.subscribe) {
 					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
-				} else {
-					RS.tools.GAMNoAdCallback('Slot_id')
+					ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
 				}
 			});
 		}
