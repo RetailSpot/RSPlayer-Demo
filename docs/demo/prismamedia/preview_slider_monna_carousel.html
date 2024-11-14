@@ -95,7 +95,12 @@ s.onload = function () {
 	RS.init(RetailSpotConfig, (ad) => {
 		if (ad && ad.subscribe){
 			ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-			ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
+		  ad.subscribe(() => {
+				if(window.top.coreAds){
+					window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
+					window.top.document.getElementById(&quot;core-ads-footer-web&quot;).style.setProperty("display", "block"); 
+				}
+			}, RS.VPAID_EVENTS.AdError);	
 		}
 	});
 }
