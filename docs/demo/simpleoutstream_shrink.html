@@ -59,13 +59,13 @@
   <script>
 
     function scaleDownPlayer() {
-        const videoContainer = document.getElementById('target');
-        videoContainer.style.transition = 'left 2s, top 2s, width 2s, height 2s';
-        videoContainer.style.left = "20px";
-        videoContainer.style.top= "400px";
-        videoContainer.style.width="213px";
-        videoContainer.style.height="120px";
-      }
+      const videoContainer = document.getElementById('target');
+      videoContainer.style.transition = 'left 2s, top 2s, width 2s, height 2s';
+      videoContainer.style.left = "20px";
+      videoContainer.style.top= "400px";
+      videoContainer.style.width="213px";
+      videoContainer.style.height="120px";
+    }
 
     const RetailSpotConfig = {
       placement: 'eq-609785-1856964-125119',
@@ -73,6 +73,9 @@
       height: '100%',
       positionSelector: "#target",
       soundButton:false,
+      context:{
+        content_type:'value1',
+      }
     }
 
     window.RetailSpot.init(RetailSpotConfig, function (creative) {
@@ -90,7 +93,7 @@
         console.log("RSPlayer: Skip button clicked!");
         window.setTimeout(()=>{
           scaleDownPlayer();
-        }, 3000); // wait 3 sec: the needed delay for ViewableImpression event 
+        }, 3000); // wait 3 sec: the needed delay for the 'ViewableImpression' event 
       }, window.RetailSpot.VPAID_EVENTS.AdImpression);
     });
   </script>
