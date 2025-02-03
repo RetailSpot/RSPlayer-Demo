@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo interactive Slider+Monna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: #4c4c4c;
+        }
+
+        .control-panel {
+            width: 300px;
+            padding: 10px;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .control-panel h2 {
+            margin: 10px 0;
+        }
+
+        .control-panel label {
+            font-size: 14px;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .control-panel input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .control-panel .buttons {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-panel button {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+        }
+
+        .iframe-container {
+          position: relative;
+          margin:50px;
+          flex-grow: 1;
+          height: calc(100% - 100px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        #overlay {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left:0px;
+          top:0px;
+        }
+    </style>
+    <script type="text/javascript" src="https://static.retailspotads.com/rsplayer.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2>Page</h2>
+            <label>URL:</label>
+            <input type="text" id="pageUrl">
+
+            <h2>Creative</h2>
+            <label>Video URL:</label>
+            <input type="text" id="videoUrl">
+
+            <label>Image URL:</label>
+            <input type="text" id="imgUrl">
+
+            <label>Title:</label>
+            <input type="text" id="title">
+
+            <label>Description:</label>
+            <input type="text" id="description">
+
+            <label>Price:</label>
+            <input type="text" id="price">
+
+            <label>Brand Logo URL:</label>
+            <input type="text" id="brandLogoUrl">
+
+            <h2>Config</h2>
+            <label>Marge horizontale:</label>
+            <input type="text" id="mh" value="50">
+
+            <label>Marge verticale:</label>
+            <input type="text" id="mv" value="50">
+
+
+            <div class="buttons">
+              <button onclick="shareConfig(true)">Partager</button>
+                <button onclick="applyConfig()">Afficher</button>
+            </div>
+        </div>
+
+        <!-- Iframe -->
+        <div class="iframe-container">
+            <iframe id="previewFrame"></iframe>
+            <div id="overlay"></div>
+        </div>
+    </div>
+
+    <script>
+        function getVast() {
+          const template = '<VAST version="2.0"><Ad id="demoId"><InLine><AdSystem>RetailSpot</AdSystem><AdTitle><![CDATA[ DEMO ]]></AdTitle><Creatives><Creative id="727435745" sequence="1"><Linear><Duration>00:00:20</Duration><MediaFiles><MediaFile delivery="progressive" bitrate="697" width="640" height="360" type="video/mp4" scalable="true" maintainAspectRatio="true"><![CDATA[ https://cdn.stickyadstv.com/www/images/1923863841-tv-mp4-6006ab69204df_4.mp4 ]]></MediaFile></MediaFiles></Linear></Creative></Creatives><Extensions><Extension type="RSNativeAd"><Title><![CDATA[ $title$ ]]></Title><Price><![CDATA[ $price$ ]]></Price><Description><![CDATA[ $description$ ]]></Description><CtaText><![CDATA[  ]]></CtaText><Domain><![CDATA[  ]]></Domain><ImageUrl><![CDATA[ $imgUrl$ ]]></ImageUrl><BrandLogoUrl><![CDATA[ $brandLogoUrl$ ]]></BrandLogoUrl></Extension></Extensions></InLine></Ad></VAST>';
+
+          const macros =['videoUrl', 'title', 'price', 'description', 'imgUrl', 'brandLogoUrl'];
+          let vast = template;
+          macros.forEach(key => {
+            vast = vast.replace('$'+key+'$', document.getElementById(key).value);
+          });
+          return vast;
+        }
+
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("pageUrl").value = params.get("pageUrl") || "";
+            document.getElementById("videoUrl").value = params.get("videoUrl") || "";
+            document.getElementById("imgUrl").value = params.get("imgUrl") || "";
+            document.getElementById("title").value = params.get("title") || "";
+            document.getElementById("description").value = params.get("description") || "";
+            document.getElementById("price").value = params.get("price") || "";
+            document.getElementById("brandLogoUrl").value = params.get("brandLogoUrl") || "";
+            document.getElementById("mh").value = params.get("mh") || "";
+            document.getElementById("mv").value = params.get("mv") || "";
+        }
+
+
+
+        function shareConfig(copy = false) {
+            const params = new URLSearchParams();
+            params.set("pageUrl", document.getElementById("pageUrl").value);
+            params.set("videoUrl", document.getElementById("videoUrl").value);
+            params.set("imgUrl", document.getElementById("imgUrl").value);
+            params.set("title", document.getElementById("title").value);
+            params.set("description", document.getElementById("description").value);
+            params.set("price", document.getElementById("price").value);
+            params.set("brandLogoUrl", document.getElementById("brandLogoUrl").value);
+            params.set("mh", document.getElementById("mh").value);
+            params.set("mv", document.getElementById("mv").value);
+
+            const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+            if(copy) {
+              navigator.clipboard.writeText(shareUrl).then(() => {
+                alert("URL copiée !");
+              });
+            }
+            return shareUrl;
+        }
+
+        function startAd(config) {
+          const RS = window.RetailSpot;
+
+          const RetailSpotConfig = {
+            vast:getVast(),
+            partnerId:'349693',
+            positionSelector:'#overlay',
+            width: 200,
+            height: 340,
+            format: 'slider',
+            hideButtons: 3000,
+            autoroll: 6000,
+            collapseButton: true,
+            widget: "monna",
+            // native template can be customized here 
+            //template: '<div style="width:100%;height:100%;"><img src="" style="width:100%;height:100%;" class="rs-el-img"/></div>',
+            mobile: {
+              width: 360,
+              height: 290,
+            },
+            ...config
+          }
+
+          RS.init(RetailSpotConfig);
+        }
+
+        function applyConfig() {
+          window.open(shareConfig(), '_self');
+        }
+
+        window.onload = () => {
+          getQueryParams();
+          if(document.getElementById("pageUrl").value){
+            const url = document.getElementById("pageUrl").value;
+            if (url) {
+                document.getElementById("previewFrame").src = url;
+            }
+            window.setTimeout(()=>{
+              const conf = {
+                hmargin: Number.parseInt(document.getElementById("mh").value), // default is 30
+                vmargin: Number.parseInt(document.getElementById("mv").value), // default is 30
+              };
+              startAd(conf);
+            }, 2000);
+          }
+        }
+    </script>
+
+</body>
+</html>
