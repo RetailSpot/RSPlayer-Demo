@@ -112,7 +112,7 @@ document.body.appendChild(s);
 		</div>
 
 		<div class="instructions">
-			Prisma Monna placement id : <b>eq-680731-2028801-135282</b><br />
+			Prisma Monna placement id : <b>eq-680731-2028801-141760</b><br />
 			Prisma Partner id : <b>644250</b>
 		</div>
 	</div>
@@ -161,7 +161,6 @@ document.body.appendChild(s);
 			RS.init(RetailSpotConfig, (ad) => {
 				if (ad.subscribe) {
 					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
-					ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
 				}
 			});
 		}
