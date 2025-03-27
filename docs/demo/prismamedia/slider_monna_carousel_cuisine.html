@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>RetailSpot Monna</title>
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			font-family: Arial, sans-serif;
+			background-color: #e6f6fe;
+		}
+
+		#header {
+			text-align: center;
+			padding: 20px;
+			max-width: 600px;
+			margin: auto;
+		}
+
+		#logo {
+			max-width: 275px;
+		}
+
+		#videoContainer {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+			background-color: #f9e1d7;
+		}
+
+		.instructions {
+			margin: 20px auto 20px;
+			top: 25px;
+			width: 600px;
+			padding: 0px 16px;
+		}
+
+		#code {
+			position: relative;
+			padding-left: 20px;
+			margin: auto;
+			width: 80%;
+			background-color: white
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="header">
+		<img id="logo"
+			src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
+			alt="Logo">
+		<h1>Monna in Slider with carousel on PrismaMedia</h1>
+		<p>Format is show at the bottom left of the page.
+			<br />It can be collapsed by clicking on the minus sign (-).
+		</p>
+	</div>
+
+	<div id="videoContainer">
+		<div class="instructions">
+			Add the monna slider in your page using this code in a
+			<b>&lt;script&gt;</b> tag.
+			<br />
+			You can find the full library documentation for outstream formats <a
+				href="https://docs.google.com/document/d/1JPHoLcVe7XOfpcZW1edK3T00vl6QKOK7-tKIBJVs0mo/edit?rm=demo">Here</a>
+		</div>
+		<div id="code">
+			<pre>
+				<code id="codecontent">
+var s = document.createElement(&quot;script&quot;);
+s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
+s.onload = function () {
+	const RS = window.RetailSpot;
+
+	const RetailSpotConfig = {
+		placement: 'eq-680731-2028801-135282',
+		partnerId: '644250',
+		width: 200,
+		height: 340,
+		format: 'slider',
+		align:'left',
+		hideButtons: 3000,
+		autoroll: 6000,
+		collapseButton: true,
+		widget: &quot;monna&quot;,
+		mobile: {
+			width: 360,
+			height: 290,
+		}
+	}
+
+	RS.init(RetailSpotConfig, (ad) => {
+		if (ad && ad.subscribe){
+			ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
+		  ad.subscribe(() => {
+				if(window.top.coreAds){
+					window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: 'RetailSpot'});
+					window.top.document.getElementById("core-ads-footer-web").style.setProperty("display", "block"); 
+				}
+			}, RS.VPAID_EVENTS.AdError);		
+		}
+	});
+}
+document.body.appendChild(s);
+				</code>
+			</pre>
+
+		</div>
+
+		<div class="instructions">
+			Prisma Monna placement id : <b>eq-680731-2028801-135282</b><br />
+			Prisma Partner id : <b>644250</b>
+		</div>
+	</div>
+	<div>
+
+
+		<div class="setting">
+		</div>
+	</div>
+	<div class="container">
+
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+
+
+		var s = document.createElement("script");
+		s.src = "https://static.retailspotads.com/rsplayer.js";
+		s.onload = function () {
+			const RS = window.RetailSpot;
+
+			const RetailSpotConfig = {
+				placement: "eq-680731-2028801-135282",
+				partnerId: '644250',
+				width: 200,
+				height: 340,
+				format: 'slider',
+				align: 'left',
+				hideButtons: 3000,
+				autoroll: 6000,
+				collapseButton: true,
+				vmargin: 100, // default is 30
+				widget: "monna",
+				// native template can be customized here 
+				//template: '<div style="width:100%;height:100%;"><img src="" style="width:100%;height:100%;" class="rs-el-img"/></div>',
+				mobile: {
+					width: 360,
+					height: 290,
+				}
+			}
+
+			RS.init(RetailSpotConfig, (ad) => {
+				if (ad.subscribe) {
+					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
+					ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
+				}
+			});
+		}
+		document.body.appendChild(s);
+	</script>
+</body>
+
+</html>
