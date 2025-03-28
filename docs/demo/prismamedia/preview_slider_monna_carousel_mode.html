@@ -113,7 +113,8 @@ document.body.appendChild(s);
 
 		<div class="instructions">
 			Prisma Monna PREVIEW placement id : <b>eq-609785-2011248-141761</b><br />
-			Prisma Partner id : <b>644250</b>
+			Prisma Partner id : <b>644250</b><br />
+			RetailSpot Player version : <span id="rs-version">644250</span>
 		</div>
 	</div>
 	<div>
@@ -137,6 +138,7 @@ document.body.appendChild(s);
 		s.src = "https://static.retailspotads.com/rsplayer.js";
 		s.onload = function () {
 			const RS = window.RetailSpot;
+			document.getElementById("rs-version").innerText = RS.version;
 
 			const RetailSpotConfig = {
 				placement: "eq-609785-2011248-141761",
@@ -162,6 +164,7 @@ document.body.appendChild(s);
 				if (ad && ad.subscribe) {
 					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
 				}
+
 			});
 		}
 		document.body.appendChild(s);
