@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>RetailSpot Orange Preview</title>
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			font-family: Arial, sans-serif;
+			background-color: #e6f6fe;
+		}
+
+		#header {
+			text-align: center;
+			padding: 20px;
+			max-width: 600px;
+			margin: auto;
+		}
+
+		#logo {
+			max-width: 275px;
+		}
+
+		#videoContainer {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+			background-color: #f9e1d7;
+			padding: 20px 0px;
+		}
+
+		.instructions {
+			margin: 20px auto 20px;
+			top: 25px;
+			width: 600px;
+			padding: 0px 16px;
+		}
+
+		.code-container {
+			position: relative;
+			margin-bottom: 1em;
+			max-width: 900px;
+			margin:auto;
+		}
+		.copy-button {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			background-color: #f1f1f1;
+			border: 1px solid #ccc;
+			padding: 5px 10px;
+			font-size: 12px;
+			cursor: pointer;
+			border-radius: 4px;
+			z-index: 1;
+		}
+		.copy-button:hover {
+			background-color: #e0e0e0;
+		}
+		pre {
+			overflow: auto;
+			padding: 1em;
+			background-color: #f9f9f9;
+			border-radius: 6px;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="header">
+		<img id="logo"
+			src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
+			alt="Logo">
+		<h1>PREVIEW format banner 970x250 Orange - The Bradery</h1>
+	</div>
+
+	<div id="videoContainer">
+		<div style="width:970px; height:250px; margin:auto;">
+				
+<script type="text/javascript">
+  (function () {
+		const targetElement = document.currentScript.parentNode;
+		const s = document.createElement("script");
+		s.src = "https://static.retailspotads.com/rsplayer.js";
+		s.onload = function () {
+			const RS = window.RetailSpot;
+			const RetailSpotConfig = {
+				placement: "eq-609785-2011248-141761",
+				target: targetElement,
+				width: '100%',
+				height: '100%',
+				widget: "monna",
+				autoroll: 6000,
+				itemsMinWidth: 200,
+			};
+		
+			RS.init(RetailSpotConfig, (ad) => {
+				if (ad && ad.subscribe){
+					ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
+					ad.subscribe(() => {
+						if(window.top.coreAds){
+							window.top.coreAds.refreshDisplaySlot("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
+						}
+					}, RS.VPAID_EVENTS.AdError);	
+				}
+			});
+		};
+		document.body.appendChild(s);
+	})();
+</script>
+				
+		</div>
+	</div>
+	<div>
+		<div class="instructions">
+			Add the RetailSpot player in your page using this code.
+			<br />
+			You can find the full library documentation for outstream formats <a
+			target="_blank"	
+			href="https://docs.google.com/document/d/1JPHoLcVe7XOfpcZW1edK3T00vl6QKOK7-tKIBJVs0mo/edit?rm=demo">Here</a>
+		</div>
+		<div class="code-container">
+  		<button class="copy-button" onclick="copyCode(this)">Copier</button>
+			<pre>
+				<code id="codecontent">
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function () {
+		const targetElement = document.currentScript.parentNode;
+		const s = document.createElement(&quot;script&quot;);
+		s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
+		s.onload = function () {
+			const RS = window.RetailSpot;
+			
+			const RetailSpotConfig = {
+				placement: &quot;eq-609785-2011248-141761&quot;,
+				target: targetElement,
+				width: '100%',
+				height: '100%',
+				widget: &quot;monna&quot;,
+				autoroll: 6000,
+				itemsMinWidth: 200,
+			};
+
+			RS.init(RetailSpotConfig, (ad) => {
+				if (ad && ad.subscribe){
+					ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
+					ad.subscribe(() => {
+						if(window.top.coreAds){
+							window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
+						}
+					}, RS.VPAID_EVENTS.AdError);	
+				}
+			});
+		};
+		document.body.appendChild(s);
+	})();
+&lt;/script&gt;
+				</code>
+			</pre>
+
+		</div>
+
+		<div class="instructions">
+			Orange SidebySide PREVIEW placement id : <b>eq-609785-2011248-141761</b><br />
+		</div>
+	</div>
+	<div>
+
+
+		<div class="setting">
+		</div>
+	</div>
+	<div class="container">
+
+	</div>
+	<script>
+		function copyCode(button) {
+			const code = button.nextElementSibling.querySelector("code").innerText;
+			navigator.clipboard.writeText(code).then(() => {
+				const originalText = button.innerText;
+				button.innerText = "Copié !";
+				setTimeout(() => button.innerText = originalText, 2000);
+			}).catch(err => {
+				console.error("Erreur lors de la copie :", err);
+			});
+		}
+		</script>
+</body>
+
+</html>

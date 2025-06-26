@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Xandr Placement</title>
+  <script type="text/javascript">
+// Declare global CMP API
+window.__tcfapi = (function() {
+  const listeners = [];
+
+  return function(command, version, callback, parameter) {
+    if (command === 'getTCData') {
+      callback({
+        gdprApplies: true,
+        tcString: "COvzTOYOvzTOYADACHENAPCgAAAAAAAAAAEAACiQHgA",
+        eventStatus: "tcloaded",
+        cmpStatus: "loaded"
+      }, true);
+    } else if (command === 'ping') {
+      callback({
+        cmpLoaded: true,
+        cmpStatus: "loaded",
+        gdprApplies: true,
+        tcfPolicyVersion: 2
+      });
+    } else if (command === 'addEventListener') {
+      // Register the callback for consent events
+      if (typeof callback === 'function') {
+        listeners.push(callback);
+
+        // Immediately notify the listener with current TCData and eventStatus 'tcloaded'
+        callback({
+          gdprApplies: true,
+          tcString: "COvzTOYOvzTOYADACHENAPCgAAAAAAAAAAEAACiQHgA",
+          eventStatus: "tcloaded",
+          cmpStatus: "loaded"
+        }, true);
+      }
+    } else {
+      callback(null, false);
+    }
+  };
+})();
+
+    // Add CCPA in page
+    window.__uspapi = function(command, version, callback) {
+      if (command === 'getUSPData') {
+        callback({
+          uspString: '1YNN', // Exemple : opt-out non effectué
+        }, true);
+      }
+    };
+
+    // Create empty apntag object if it doesn't exist
+    var apntag = apntag || {};
+    // Create a command queue on apntag
+    apntag.anq = apntag.anq || [];
+
+    // Load ast.js from Xandr CDN asynchronously
+    (function () {
+      var d = document, e = d.createElement('script'), p = d.getElementsByTagName('head')[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.crossOrigin = 'anonymous';
+      e.src = 'https://adsdk.microsoft.com/ast/ast.js';
+      p.insertBefore(e, p.firstChild);
+    })();
+
+    // Push configuration and ad setup into the queue
+    apntag.anq.push(function () {
+      // Set global page options (member ID + targeting)
+      apntag.setPageOpts({
+        member: 15555,
+        keywords: {
+          'keyword_test': 'test_value'
+        }
+      });
+
+      // Define a single ad tag
+      apntag.defineTag({
+        tagId: 35876582,
+        targetId: 'test_ad_div'        // This must match the ID of the div in the body
+      });
+
+      // Load the tag
+      apntag.loadTags();
+    });
+  </script>
+</head>
+<body>
+  <h2>Test Xandr Placement</h2>
+  <!-- This div is where the ad will appear -->
+  <div id="test_ad_div" style="width:300px; height:250px; border:1px dashed #ccc;">
+    <script type="text/javascript">
+      // Mark this div as ready for ad placement
+      apntag.anq.push(function () {
+        apntag.showTag('test_ad_div');
+      });
+    </script>
+  </div>
+</body>
+</html>
