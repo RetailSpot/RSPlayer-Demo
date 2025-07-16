@@ -126,9 +126,7 @@
     if (ad && ad.subscribe){
      ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
      ad.subscribe(() => {
-      if(window.top.coreAds){
-       window.top.coreAds.refreshDisplaySlot("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
-      }
+       RS.tools.GAMNoAdCallback("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
      }, RS.VPAID_EVENTS.AdError); 
     }
    });
@@ -191,12 +189,10 @@
   
    RS.init(RetailSpotConfig, (ad) =&gt; {
     if (ad &amp;&amp; ad.subscribe){
-     ad.subscribe(() =&gt; RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-     ad.subscribe(() =&gt; {
-      if(window.top.coreAds){
-       window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
-      }
-     }, RS.VPAID_EVENTS.AdError); 
+      ad.subscribe(() =&gt; RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
+      ad.subscribe(() =&gt; {
+        RS.tools.GAMNoAdCallback(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
+      }, RS.VPAID_EVENTS.AdError); 
     }
    });
   };
