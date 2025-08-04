@@ -25,7 +25,7 @@ parameters: [placement, env, width, height]
       window.location.search.toLowerCase()
     );
     let env = urlParams.get("env") || "prod";
-    let placement = urlParams.get("placement") || "test-1234";
+    let placement = urlParams.get("placement") || "686fb0737270f6fecf7bc8e3";
     var width = parseInt(urlParams.get("width") || 300);
     var height = parseInt(urlParams.get("height") || 250);
 
@@ -48,7 +48,7 @@ parameters: [placement, env, width, height]
           {
             bidder: 'retailspot',
             params: {
-              placement: 'eq-609785-1856964-125234',
+              placement: placement,
               env: env
             }
           }]

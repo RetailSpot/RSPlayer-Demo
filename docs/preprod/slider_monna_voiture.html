@@ -71,42 +71,33 @@
 		<div id="code">
 			<pre>
 				<code id="codecontent">
-var s = document.createElement(&quot;script&quot;);
-s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
-s.onload = function () {
-	const RS = window.RetailSpot;
 
-	const RetailSpotConfig = {
-		placement: '686fb0737270f6fecf7bc8e3',
-		partnerId: '644250',
-		width: 200,
-		height: 340,
-		format: 'slider',
-		align:'left',
-		hideButtons: 3000,
-		autoroll: 6000,
-		collapseButton: true,
-		widget: &quot;monna&quot;,
-		env: 'preprod',
-		mobile: {
-			width: 360,
-			height: 290,
-		}
-	}
+		var s = document.createElement(&quot;script&quot;);
+		s.src = &quot;https://static-preprod.retailspotads.com/rsplayer.js&quot;;
+		s.onload = function () {
+			const RS = window.RetailSpot;
 
-	RS.init(RetailSpotConfig, (ad) => {
-		if (ad && ad.subscribe){
-			ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-		  ad.subscribe(() => {
-				if(window.top.coreAds){
-					window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
-					window.top.document.getElementById(&quot;core-ads-footer-web&quot;).style.setProperty("display", "block"); 
+			const RetailSpotConfig = {
+				placement: &quot;686fb0737270f6fecf7bc8e3&quot;,
+				partnerId: '644250',
+				width: 200,
+				height: 340,
+				format: 'slider',
+				align: 'left',
+				hideButtons: 3000,
+				autoroll: 6000,
+				collapseButton: true,
+				vmargin: 60,
+				widget: &quot;monna&quot;,
+				mobile: {
+					width: 360,
+					height: 290,
 				}
-			}, RS.VPAID_EVENTS.AdError);	
+			}
+
+			RS.init(RetailSpotConfig);
 		}
-	});
-}
-document.body.appendChild(s);
+		document.body.appendChild(s);
 				</code>
 			</pre>
 
@@ -132,8 +123,6 @@ document.body.appendChild(s);
 
 	<script type="text/javascript">
 
-
-
 		var s = document.createElement("script");
 		s.src = "https://static-preprod.retailspotads.com/rsplayer.js";
 		s.onload = function () {
@@ -149,7 +138,7 @@ document.body.appendChild(s);
 				hideButtons: 3000,
 				autoroll: 6000,
 				collapseButton: true,
-				vmargin: 100, // default is 30
+				vmargin: 60, // default is 30
 				widget: "monna",
 				// native template can be customized here 
 				//template: '<div style="width:100%;height:100%;"><img src="" style="width:100%;height:100%;" class="rs-el-img"/></div>',
@@ -159,12 +148,7 @@ document.body.appendChild(s);
 				}
 			}
 
-			RS.init(RetailSpotConfig, (ad) => {
-				if (ad && ad.subscribe) {
-					ad.subscribe(() => RS.tools.track("http://fakepxl.retailspot.org"), RS.VPAID_EVENTS.AdClickThru);
-					ad.subscribe(() => RS.tools.GAMNoAdCallback('Footer-web'), RS.VPAID_EVENTS.AdError);
-				}
-			});
+			RS.init(RetailSpotConfig);
 		}
 		document.body.appendChild(s);
 	</script>
