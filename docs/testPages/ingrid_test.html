@@ -306,11 +306,12 @@
 			document.getElementById("rsp-version").innerText = RS.version;
 
 			const RetailSpotConfig = {
-				vastUrl: "https://retailspot.github.io/RSPlayer-Demo/vast/nivea.xml",
+				placement: '68c043cb3a9a482fc805336a',
 				format: "ingrid",
 				align: align,
 				ingridSize: size,
 				videoPosition: mode,
+				sponsoredLabel: false,
 			}
 
 			RS.init(RetailSpotConfig, function (creative) {
