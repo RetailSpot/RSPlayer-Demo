@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailSpot sample player</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e6f6fe;
+    }
+
+    #header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    #logo {
+      max-width: 275px;
+    }
+
+    #videoContainer {
+      width: calc(100% - 100px);
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      background-color: #fbd285;
+      padding: 50px;
+    }
+
+    #target {
+      position: relative;
+      width: calc(100% - 100px);
+      height: 300px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .instructions {
+      margin: 20px auto 20px;
+      top: 25px;
+      width: 600px;
+      padding: 0px 16px;
+    }
+
+    .code-container {
+      position: relative;
+      margin-bottom: 1em;
+      max-width: 900px;
+      margin:auto;
+    }
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      z-index: 1;
+    }
+    .copy-button:hover {
+      background-color: #e0e0e0;
+    }
+    pre {
+      overflow: auto;
+      padding: 1em;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+  </style>
+  <script type="text/javascript" src="https://static.retailspotads.com/rsplayer.js"></script>
+</head>
+
+<body>
+
+  <div id="header">
+    <img id="logo"
+      src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
+      alt="Logo">
+    <h1>Oustream video/carousel in Monna widget </h1>
+  </div>
+
+  <div id="videoContainer">
+    <div id="target"></div>
+  </div>
+  <div>
+    <div class="instructions">
+      Add the RetailSpot player in your page using this code.
+      <br />
+      You can find the full library documentation for outstream formats <a
+      target="_blank"  
+      href="https://docs.google.com/document/d/1JPHoLcVe7XOfpcZW1edK3T00vl6QKOK7-tKIBJVs0mo/edit?rm=demo">Here</a>
+    </div>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copier</button>
+      <pre>
+        <code id="codecontent">
+&lt;div id="target"&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+ (function () {
+  const targetElement = document.currentScript.parentNode;
+  const s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
+  s.onload = function () {
+   const RS = window.RetailSpot;
+   
+   const RetailSpotConfig = {
+      placement: &quot;68c04b493a9a482fc8053470&quot;,
+      positionSelector: &quot;#target&quot;,
+      itemsMinSize: 200,
+      autoroll: 4000,
+      arrowAbove: true,
+      width: &quot;100%&quot;,
+      height: 300,
+      videoLoop: true,
+      hideButtons: 3000,
+      closeButton: false,
+      secondaryColor: &quot;#f9c863&quot;,
+      widget: &quot;monna&quot;,
+    };
+  
+   RS.init(RetailSpotConfig, (ad) =&gt; {
+    if (ad &amp;&amp; ad.subscribe){
+      ad.subscribe(() =&gt; {
+        console.log("AdError event received");
+      }, RS.VPAID_EVENTS.AdError); 
+    }
+   });
+  };
+  document.body.appendChild(s);
+ })();
+&lt;/script&gt;
+        </code>
+      </pre>
+
+    </div>
+
+    <div class="instructions">
+      Monna Carousel PREVIEW placement id : <b>68c04b493a9a482fc8053470</b><br />
+    </div>
+  </div>
+  <div>
+  <script>
+
+    function copyCode(button) {
+      const code = button.nextElementSibling.querySelector("code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "Copié !";
+        setTimeout(() => button.innerText = originalText, 2000);
+      }).catch(err => {
+        console.error("Erreur lors de la copie :", err);
+      });
+    }
+
+    const RetailSpotConfig = {
+      placement: '68c04b493a9a482fc8053470',
+      positionSelector: "#target",
+      itemsMinSize: 200,
+      autoroll: 4000,
+      arrowAbove: true,
+      width: '100%',
+      height: 300,
+      videoLoop: true,
+      hideButtons: 3000,
+      closeButton: false,
+      secondaryColor: '#f9c863',
+      widget: "monna",
+    }
+
+    window.RetailSpot.init(RetailSpotConfig, function (creative) {
+      creative.subscribe(function () {
+        console.log("RSPlayer: AdLoaded!");
+      }, window.RetailSpot.VPAID_EVENTS.AdLoaded);
+      creative.subscribe(function () {
+        console.log("RSPlayer: AdStopped!");
+      }, window.RetailSpot.VPAID_EVENTS.AdStopped);
+      creative.subscribe(function () {
+        console.log("RSPlayer: Skip button clicked!");
+      }, window.RetailSpot.VPAID_EVENTS.AdSkipped);
+    });
+  </script>
+
+</body>
+
+</html>
