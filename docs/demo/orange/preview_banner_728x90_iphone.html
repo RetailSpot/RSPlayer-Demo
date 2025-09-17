@@ -76,58 +76,55 @@
 		<img id="logo"
 			src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
 			alt="Logo">
-		<h1>PREVIEW format banner 970x250 Orange - The Bradery</h1>
+		<h1>PREVIEW format banner 728x90 Orange - Visa</h1>
 	</div>
 
 	<div id="videoContainer">
-		<div style="width:970px; height:250px; margin:auto;">
-				
-<script type="text/javascript">
-  (function () {
-		const targetElement = document.currentScript.parentNode;
-		const s = document.createElement("script");
-		s.src = "https://static.retailspotads.com/rsplayer.js";
-		s.onload = function () {
-			const RS = window.RetailSpot;
-			const RetailSpotConfig = {
-				placement: "eq-609785-2011248-141761",
-				target: targetElement,
-				width: '100%',
-				height: 250,
-				widget: "monna",
-				autoroll: 6000,
-				itemsMinSize: 200,
-			};
-		
-			RS.init(RetailSpotConfig, (ad) => {
-				if (ad && ad.subscribe){
-					ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
-					ad.subscribe(() => {
-						if(window.top.coreAds){
-							window.top.coreAds.refreshDisplaySlot("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
-						}
-					}, RS.VPAID_EVENTS.AdError);	
-				}
-			});
-		};
-		document.body.appendChild(s);
-	})();
-</script>
-				
+		<div style="max-width:728px; height:90px; margin:auto;">
+				<script type="text/javascript">
+					(function () {
+						const targetElement = document.currentScript.parentNode;
+						const s = document.createElement("script");
+						s.src = "https://static.retailspotads.com/rsplayer.js";
+						s.onload = function () {
+							const RS = window.RetailSpot;
+							const RetailSpotConfig = {
+								placement: "eq-testnative-2011248-135707",
+								target: targetElement,
+								width: '100%',
+								height: 90,
+								autoroll: 6000,
+								mediatype: "native",
+							};
+						
+							RS.init(RetailSpotConfig, (ad) => {
+								if (ad && ad.subscribe){
+									ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
+									ad.subscribe(() => {
+										if(window.top.coreAds){
+											window.top.coreAds.refreshDisplaySlot("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
+										}
+									}, RS.VPAID_EVENTS.AdError);	
+								}
+							});
+						};
+						document.body.appendChild(s);
+					})();
+				</script>
+			</div>
 		</div>
-	</div>
-	<div>
-		<div class="instructions">
-			Add the RetailSpot player in your page using this code.
-			<br />
-			You can find the full library documentation for outstream formats <a
-			target="_blank"	
-			href="https://docs.google.com/document/d/1JPHoLcVe7XOfpcZW1edK3T00vl6QKOK7-tKIBJVs0mo/edit?rm=demo">Here</a>
-		</div>
-		<div class="code-container">
-  		<button class="copy-button" onclick="copyCode(this)">Copier</button>
-			<pre>
-				<code id="codecontent">
+		<div>
+			<div class="instructions">
+				Add the RetailSpot player in your page using this code.
+				<br />
+				You can find the full library documentation for outstream formats <a
+				target="_blank"	
+				href="https://docs.google.com/document/d/1JPHoLcVe7XOfpcZW1edK3T00vl6QKOK7-tKIBJVs0mo/edit?rm=demo">Here</a>
+			</div>
+			<div class="code-container">
+				<button class="copy-button" onclick="copyCode(this)">Copier</button>
+				<pre>
+					<code id="codecontent">
 &lt;script type=&quot;text/javascript&quot;&gt;
   (function () {
 		const targetElement = document.currentScript.parentNode;
