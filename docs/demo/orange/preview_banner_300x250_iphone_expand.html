@@ -15,12 +15,15 @@
     #header {
       text-align: center;
       padding: 20px;
-      max-width: 600px;
       margin: auto;
+      display: flex;
+      flex-direction: row;
     }
 
     #logo {
       max-width: 275px;
+      min-width: 275px;
+      height: 151px;
     }
 
     #videoContainer {
@@ -35,7 +38,6 @@
     .instructions {
       margin: 20px auto 20px;
       top: 25px;
-      width: 600px;
       padding: 0px 16px;
     }
 
@@ -76,79 +78,66 @@
     <img id="logo"
       src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
       alt="Logo">
-    <h1>PREVIEW format banner  300x600 Orange - iphone</h1>
+    <h1>PREVIEW format banner  300x250 Orange - Samsung</h1>
   </div>
-  <div style=" display: flex; flex-direction:row;justify-content:  center; align-items: flex-start; max-width:1024px; margin: auto;">
+  <div style=" display: flex; flex-direction:row-reverse;justify-content:  center; align-items: flex-start; max-width:1024px; margin: auto;">
     <div id="videoContainer" style="width:340px;">
-    <div style="width:300px; height:600px; margin:auto;">
+      <div id="target" style="width:300px;height:250px;margin:auto;">
+      <iframe
+        scrolling="no"
+        width="300"
+        height="250"
+        style="border:0; display:block; margin:auto;"
+        sandbox="allow-scripts allow-same-origin"
+        srcdoc='
+          <html>
+          <body style="margin:0; padding:0; background-color:transparent;">
+          <div style="width:100%; height:250px; margin:auto;">
+            <script type="text/javascript">
+              (function () {
+                const targetElement = document.currentScript.parentNode;
+                const s = document.createElement("script");
+                s.src = "https://static.retailspotads.com/rsplayer.js";
+                s.onload = function () {
+                  const RS = window.RetailSpot;
+                  const RetailSpotConfig = {
+                    placement: "68b8056e3a9a482fc8052fa8",
+                    target: targetElement,
+                    width: 300,
+                    height: 250,
+                    videoLoop: true,
+                    videoFit: "cover",
+                    expandVideo: {
+                      width: 500,
+                      height: 280,
+                      trigger: "view",
+                      align: "top-right",
+                    }
+                  };
 
-<script type="text/javascript">
- (function () {
-  const targetElement = document.currentScript.parentNode;
-  const s = document.createElement("script");
-  s.src = "https://static.retailspotads.com/rsplayer.js";
-  s.onload = function () {
-   const RS = window.RetailSpot;
-   const template = `
-   <div style="background-color:transparent; padding: 0px 8px 8px 8px; width:100%; height:100%;box-sizing: border-box;">
-    <div style="background-color:#ffffffAA;font-family: Arial, sans-serif; width:100%; height:100%; box-sizing: border-box;padding: 10px; display: flex; flex-direction: row; justify-content:space-around; align-items: center; border-radius:8px;">
-     <div style="height:100%; min-width: 100px;display: flex;flex-direction: row;justify-content: center;">
-      <img class="rs-el-img" src="" alt="Product image" style="height: 100%; width:auto; margin:auto; box-sizing: border-box; background-color:transparent;border-radius:4px; object-fit:contain;" />
-     </div>
-      <div style="height:100%; flex:1; display: flex; flex-direction: column; justify-content: center; padding-left: 10px;">
-      <div>
-        <div class="rs-el-sponsoredby" style="font-size: 14px; color: #000;"></div>
-        <div class="rs-el-title" style="font-weight: bold; font-size: 16px; color: #000; padding:4px 0;"></div>
-      </div>
-      <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
-       <div style="display: flex; flex-direction: column; text-align: left; height:100%; justify-content: flex-start;">
-        <div class="rs-el-description" style="font-size: 13px; color: #444;"></div>
-        <div class="rs-el-rating" style="font-size: 13px; color: #f15e00;"></div>
-       </div>
-       <div style="display: flex; flex-direction: column; height:100%; justify-content: flex-end; align-items: flex-end;">
-        <div class="rs-el-beforeprice" style="font-size: 12px; color: #000;"></div>
-        <div class="rs-el-price" style="font-size: 20px; font-weight: bold; color: #f15e00;"></div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>`;
-   const RetailSpotConfig = {
-    placement: "68b8056e3a9a482fc8052fa8",
-    target: targetElement,
-    width: 300,
-    height: 600,
-    widget: "monna",
-    autoroll: 6000,
-    arrowsPadding: 0,
-    carouselDirection: 'vertical',
-    itemsMinSize: 110,
-    template: template,
-    expandVideo: {
-      width: 336,
-      height: 189,
-     }
-   };
-  
-   RS.init(RetailSpotConfig, (ad) => {
-    if (ad && ad.subscribe){
-     ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
-     ad.subscribe(() => {
-      RS.tools.GAMNoAdCallback("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
-     }, RS.VPAID_EVENTS.AdError); 
-    }
-   });
-  };
-  document.body.appendChild(s);
- })();
-</script>        
-        
+                  RS.init(RetailSpotConfig, (ad) => {
+                    if (ad && ad.subscribe) {
+                      ad.subscribe(() => RS.tools.track("%%CLICK_URL_UNESC%%"), RS.VPAID_EVENTS.AdClickThru);
+                      ad.subscribe(() => {
+                        RS.tools.GAMNoAdCallback("%%PATTERN:slotCode%%", { origine: "RetailSpot"});
+                      }, RS.VPAID_EVENTS.AdError);
+                    }
+                  });
+                };
+                document.body.appendChild(s);
+              })();
+            </script>
+          </div>
+          </body>
+          </html>
+        '>
+      </iframe>
     </div>
   </div>
-  <div style=" flex: 1;"">
+  <div style="flex: 1;">
 
     <div class="instructions">
-      Orange SidebySide PREVIEW placement id : <b>eq-57898-34853-23149</b><br />
+      Orange PREVIEW placement id : <b>eq-57898-34853-23149</b><br />
     </div>
     <div class="instructions">
       Add the RetailSpot player in your page using this code.
@@ -196,9 +185,9 @@
     placement: &quot;eq-57898-34853-23149&quot;,
     target: targetElement,
     width: '100%',
-    height: 600,
+    height: 250,
     widget: &quot;monna&quot;,
-    autoroll: 6000,
+    autoroll: 2500,
     arrowsPadding: 0,
     carouselDirection: 'vertical',
     itemsMinSize: 110,

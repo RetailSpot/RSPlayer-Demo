@@ -82,6 +82,19 @@
 	<div id="videoContainer">
 		<div style="max-width:728px; height:90px; margin:auto;">
 				<script type="text/javascript">
+
+
+					nativeData = {
+						"title": "Visa Infinite",
+						"brand": "Visa",
+						"description": "De nouvelles expériences : Privilèges et Club Visa Infinite, Concierge 24h/24...",
+						"ctatext": "Découvrez my Visa",
+						"imageUrl": "https://assets.retailspotads.com/img/visa.png",
+						"clickUrl": "https://my.visa.fr/fr",
+						"brandLogoUrl": "https://my.visa.fr/themes/custom/visa_ch_france/logo.svg",
+						"brandColor": "#021e4c",
+					};
+
 					(function () {
 						const targetElement = document.currentScript.parentNode;
 						const s = document.createElement("script");
@@ -89,12 +102,13 @@
 						s.onload = function () {
 							const RS = window.RetailSpot;
 							const RetailSpotConfig = {
-								placement: "68c93317f5087b8f0ee667fd",
+								//placement: "eq-testnative-2011248-135707",
+								nativeData,
 								target: targetElement,
-								width: '100%',
+								width: 728,
 								height: 90,
-								widget: "side-by-side",
-								itemsMinHeight: 90,
+								mediatype: "native",
+								widget:'monna',
 							};
 						
 							RS.init(RetailSpotConfig, (ad) => {

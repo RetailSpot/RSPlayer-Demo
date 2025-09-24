@@ -27,7 +27,6 @@
 			width: 100%;
 			margin: 0 auto;
 			position: relative;
-			overflow: hidden;
 			background-color: #f9e1d7;
 			padding: 20px 0px;
 		}
@@ -76,7 +75,7 @@
 		<img id="logo"
 			src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
 			alt="Logo">
-		<h1>PREVIEW format banner 728x90 Orange - Visa</h1>
+		<h1>PREVIEW format banner 728x90 Orange - Samsung - monna</h1>
 	</div>
 
 	<div id="videoContainer">
@@ -89,12 +88,18 @@
 						s.onload = function () {
 							const RS = window.RetailSpot;
 							const RetailSpotConfig = {
-								placement: "68c93317f5087b8f0ee667fd",
+								placement: "68b8056e3a9a482fc8052fa8",
 								target: targetElement,
-								width: '100%',
+								width: 728,
 								height: 90,
 								widget: "monna",
 								itemsMinHeight: 90,
+								videoFit: "cover",
+								expandVideo: {
+									width: 268,
+									height: 150,
+									trigger: "view",
+								}
 							};
 						
 							RS.init(RetailSpotConfig, (ad) => {
