@@ -76,7 +76,7 @@
     <img id="logo"
       src="https://static.wixstatic.com/media/0b66d2_b422a51179a24f71a843a1db74978d2b~mv2.png/v1/fill/w_268,h_151,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/unknown-8962.png"
       alt="Logo">
-    <h1>PREVIEW format banner  300x600 Orange - iphone</h1>
+    <h1>PREVIEW format banner  300x600 Orange</h1>
   </div>
   <div style=" display: flex; flex-direction:row;justify-content:  center; align-items: flex-start; max-width:1024px; margin: auto;">
     <div id="videoContainer" style="width:340px;">
@@ -124,10 +124,6 @@
     carouselDirection: 'vertical',
     itemsMinSize: 110,
     template: template,
-    expandVideo: {
-      width: 336,
-      height: 189,
-     }
    };
   
    RS.init(RetailSpotConfig, (ad) => {
@@ -148,7 +144,7 @@
   <div style=" flex: 1;"">
 
     <div class="instructions">
-      Orange SidebySide PREVIEW placement id : <b>eq-57898-34853-23149</b><br />
+      Orange Monna Scryscrapper PREVIEW placement id : <b>68b8056e3a9a482fc8052fa8</b><br />
     </div>
     <div class="instructions">
       Add the RetailSpot player in your page using this code.
@@ -193,24 +189,24 @@
     &lt;/div&gt;
    &lt;/div&gt;`;
    const RetailSpotConfig = {
-    placement: &quot;eq-57898-34853-23149&quot;,
+    placement: &quot;68b8056e3a9a482fc8052fa8&quot;,
     target: targetElement,
-    width: '100%',
+    width: 300,
     height: 600,
     widget: &quot;monna&quot;,
     autoroll: 6000,
     arrowsPadding: 0,
     carouselDirection: 'vertical',
     itemsMinSize: 110,
-    template: template
+    template: template,
    };
   
    RS.init(RetailSpotConfig, (ad) =&gt; {
     if (ad &amp;&amp; ad.subscribe){
-      ad.subscribe(() =&gt; RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-      ad.subscribe(() =&gt; {
-        RS.tools.GAMNoAdCallback(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
-      }, RS.VPAID_EVENTS.AdError); 
+     ad.subscribe(() =&gt; RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
+     ad.subscribe(() =&gt; {
+      RS.tools.GAMNoAdCallback(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
+     }, RS.VPAID_EVENTS.AdError); 
     }
    });
   };

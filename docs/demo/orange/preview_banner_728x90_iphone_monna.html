@@ -88,12 +88,13 @@
 						s.onload = function () {
 							const RS = window.RetailSpot;
 							const RetailSpotConfig = {
-								placement: "68b8056e3a9a482fc8052fa8",
+								placement: "68c043cb3a9a482fc805336a",
 								target: targetElement,
 								width: 728,
 								height: 90,
 								widget: "monna",
 								itemsMinHeight: 90,
+								itemsMinSize: 200,
 								videoFit: "cover",
 								expandVideo: {
 									width: 268,
@@ -132,35 +133,40 @@
 					<code id="codecontent">
 &lt;script type=&quot;text/javascript&quot;&gt;
   (function () {
-		const targetElement = document.currentScript.parentNode;
-		const s = document.createElement(&quot;script&quot;);
-		s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
-		s.onload = function () {
-			const RS = window.RetailSpot;
-			
-			const RetailSpotConfig = {
-				placement: &quot;eq-609785-2011248-141761&quot;,
-				target: targetElement,
-				width: '100%',
-				height: 250,
-				widget: &quot;monna&quot;,
-				autoroll: 6000,
-				itemsMinSize: 200,
-			};
+    const targetElement = document.currentScript.parentNode;
+    const s = document.createElement(&quot;script&quot;);
+    s.src = &quot;https://static.retailspotads.com/rsplayer.js&quot;;
+    s.onload = function () {
+      const RS = window.RetailSpot;
+      const RetailSpotConfig = {
+        placement: &quot;68c043cb3a9a482fc805336a&quot;,
+        target: targetElement,
+        width: 728,
+        height: 90,
+        widget: &quot;monna&quot;,
+        itemsMinHeight: 90,
+        itemsMinSize: 200,
+        videoFit: &quot;cover&quot;,
+        expandVideo: {
+          width: 268,
+          height: 150,
+          trigger: &quot;view&quot;,
+        }
+      };
 
-			RS.init(RetailSpotConfig, (ad) => {
-				if (ad && ad.subscribe){
-					ad.subscribe(() => RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
-					ad.subscribe(() => {
-						if(window.top.coreAds){
-							window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
-						}
-					}, RS.VPAID_EVENTS.AdError);	
-				}
-			});
-		};
-		document.body.appendChild(s);
-	})();
+      RS.init(RetailSpotConfig, (ad) =&gt; {
+        if (ad &amp;&amp; ad.subscribe){
+          ad.subscribe(() =&gt; RS.tools.track(&quot;%%CLICK_URL_UNESC%%&quot;), RS.VPAID_EVENTS.AdClickThru);
+          ad.subscribe(() =&gt; {
+            if(window.top.coreAds){
+              window.top.coreAds.refreshDisplaySlot(&quot;%%PATTERN:slotCode%%&quot;, { origine: &quot;RetailSpot&quot;});
+            }
+          }, RS.VPAID_EVENTS.AdError);  
+        }
+      });
+    };
+    document.body.appendChild(s);
+  })();
 &lt;/script&gt;
 				</code>
 			</pre>
@@ -168,7 +174,7 @@
 		</div>
 
 		<div class="instructions">
-			Orange SidebySide PREVIEW placement id : <b>eq-609785-2011248-141761</b><br />
+			Orange PREVIEW placement id : <b>68c043cb3a9a482fc805336a</b><br />
 		</div>
 	</div>
 	<div>
